@@ -1,0 +1,25 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Vladimir Kosolapov",
+                "Website": "https://github.com/vmkspv"
+            }
+        ],
+        "Name": "Kopypast",
+        "Description": "Quick interaction with text snippets",
+        "Category": "Utilities",
+        "Id": "io.github.vmkspv.kopypast",
+        "Icon": "text-flow-into-frame",
+        "Version": "1.0.0",
+        "License": "GPL-3.0",
+        "BugReportUrl": "https://github.com/vmkspv/kopypast/issues",
+        "Website": "https://github.com/vmkspv/kopypast",
+        "FormFactors": [
+            "desktop"
+        ]
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "Plasma/Applet"
+}
