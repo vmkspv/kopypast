@@ -8,6 +8,8 @@
         ],
         "Name": "Kopypast",
         "Description": "Quick interaction with text snippets",
+        "Description[ru]": "Быстрое взаимодействие с текстовыми сниппетами",
+        "Description[uk]": "Швидка взаємодія з текстовими сніпетами",
         "Category": "Utilities",
         "Id": "io.github.vmkspv.kopypast",
         "Icon": "text-flow-into-frame",
