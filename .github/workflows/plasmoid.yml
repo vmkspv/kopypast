@@ -1,0 +1,47 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+name: CI
+jobs:
+  build:
+    name: "Plasmoid"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Verify license headers
+      run: |
+        missing_headers=0
+        for file in $(find package/contents -name "*.qml" -o -name "*.xml"); do
+          if ! grep -q "SPDX-License-Identifier: GPL-3.0" "$file"; then
+            echo "Missing license header in $file"
+            missing_headers=1
+          fi
+        done
+        if [ $missing_headers -eq 1 ]; then
+          exit 1
+        fi
+    - name: Validate metadata.json
+      run: |
+        required_fields=("Authors" "Name" "Description" "Icon" "Version" "License" "Id")
+        metadata_file="package/metadata.json"
+        missing_fields=0
+        for field in "${required_fields[@]}"; do
+          if ! jq -e ".KPlugin.$field" "$metadata_file" > /dev/null 2>&1; then
+            echo "Missing required field: $field"
+            missing_fields=1
+          fi
+        done
+        if [ $missing_fields -eq 1 ]; then
+          exit 1
+        fi
+    - name: Package Plasmoid
+      run: |
+        cd package
+        zip -r ../io.github.vmkspv.kopypast.plasmoid .
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: plasma-applet-kopypast
+        path: io.github.vmkspv.kopypast.plasmoid
+        if-no-files-found: error
