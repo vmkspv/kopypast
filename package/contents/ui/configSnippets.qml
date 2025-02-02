@@ -131,11 +131,36 @@ SimpleKCM {
                 onClicked: snippetDialog.createSnippet()
             }
             Item { Layout.fillWidth: true }
+
+            PlasmaComponents.Button {
+                icon.name: "document-export"
+                text: i18n("Backup")
+                onClicked: {
+                    backupDialog.isBackup = true
+                    backupDialog.open()
+                }
+            }
+
+            PlasmaComponents.Button {
+                icon.name: "document-import"
+                text: i18n("Restore")
+                onClicked: {
+                    backupDialog.isBackup = false
+                    backupDialog.open()
+                }
+            }
         }
     }
 
     SnippetDialog {
         id: snippetDialog
+        parent: snippetsPage
+        width: Math.min(snippetsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
+        height: Math.min(snippetsPage.height - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
+    }
+
+    BackupDialog {
+        id: backupDialog
         parent: snippetsPage
         width: Math.min(snippetsPage.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
         height: Math.min(snippetsPage.height - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
