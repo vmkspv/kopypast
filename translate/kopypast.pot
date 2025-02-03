@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-01-30 20:00+0300\n"
+"POT-Creation-Date: 2025-02-03 16:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,58 @@ msgstr ""
 
 #: package/contents/config/config.qml
 msgid "Snippets"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Snippets"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restore Snippets"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup contains no snippets"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid snippet format"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "All snippets are duplicates"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restored %1 snippet, skipped %2 duplicate(s)"
+msgid_plural "Restored %1 snippets, skipped %2 duplicate(s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Successfully restored %1 snippet"
+msgid_plural "Successfully restored %1 snippets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid backup format"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy and save the contents below to back up your snippets:"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Paste the backup contents below to restore your snippets:"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Contents"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy"
 msgstr ""
 
 #: package/contents/ui/configSnippets.qml
@@ -41,6 +93,14 @@ msgstr ""
 #: package/contents/ui/configSnippets.qml
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Backup"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Restore"
 msgstr ""
 
 #: package/contents/ui/main.qml

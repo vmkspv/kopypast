@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-01-30 20:00+0300\n"
-"PO-Revision-Date: 2025-01-30 21:00+0300\n"
+"POT-Creation-Date: 2025-02-03 16:00+0300\n"
+"PO-Revision-Date: 2025-02-03 17:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -21,6 +21,60 @@ msgstr ""
 #: package/contents/config/config.qml
 msgid "Snippets"
 msgstr "Сниппеты"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Snippets"
+msgstr "Сохранить"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restore Snippets"
+msgstr "Восстановить"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup contains no snippets"
+msgstr "Резервная копия не содержит сниппетов"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid snippet format"
+msgstr "Неверный формат сниппета"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "All snippets are duplicates"
+msgstr "Все сниппеты уже добавлены"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restored %1 snippet, skipped %2 duplicate(s)"
+msgid_plural "Restored %1 snippets, skipped %2 duplicate(s)"
+msgstr[0] "Восстановлен %1 сниппет, пропущено %2 дубликат(а)"
+msgstr[1] "Восстановлено %1 сниппета, пропущено %2 дубликат(а)"
+msgstr[2] "Восстановлено %1 сниппетов, пропущено %2 дубликат(а)"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Successfully restored %1 snippet"
+msgid_plural "Successfully restored %1 snippets"
+msgstr[0] "Успешно восстановлен %1 сниппет"
+msgstr[1] "Успешно восстановлено %1 сниппета"
+msgstr[2] "Успешно восстановлено %1 сниппетов"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid backup format"
+msgstr "Неверный формат резервной копии"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy and save the contents below to back up your snippets:"
+msgstr "Скопируйте приведённый ниже текст для создания резервной копии:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Paste the backup contents below to restore your snippets:"
+msgstr "Вставьте содержимое резервной копии ниже для восстановления:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Contents"
+msgstr "Содержимое резервной копии"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy"
+msgstr "Копировать"
 
 #: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
@@ -42,6 +96,14 @@ msgstr "Удалить"
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Добавить"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Backup"
+msgstr "Сохранить"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Restore"
+msgstr "Восстановить"
 
 #: package/contents/ui/main.qml
 msgid "Search for snippets..."

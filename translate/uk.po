@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-01-30 20:00+0300\n"
-"PO-Revision-Date: 2025-01-30 21:00+0300\n"
+"POT-Creation-Date: 2025-02-03 16:00+0300\n"
+"PO-Revision-Date: 2025-02-03 17:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -21,6 +21,62 @@ msgstr ""
 #: package/contents/config/config.qml
 msgid "Snippets"
 msgstr "Сніпети"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Snippets"
+msgstr "Зберегти"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restore Snippets"
+msgstr "Відновити"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup contains no snippets"
+msgstr "Резервна копія не містить сніпетів"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid snippet format"
+msgstr "Неправильний формат сніпета"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "All snippets are duplicates"
+msgstr "Усі сніпети вже додано"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restored %1 snippet, skipped %2 duplicate(s)"
+msgid_plural "Restored %1 snippets, skipped %2 duplicate(s)"
+msgstr[0] "Відновлено %1 сніпет, пропущено %2 дублікатів"
+msgstr[1] "Відновлено %1 сніпети, пропущено %2 дублікатів"
+msgstr[2] "Відновлено %1 сніпетів, пропущено %2 дублікатів"
+msgstr[3] "Відновлено %1 сніпет, пропущено %2 дублікатів"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Successfully restored %1 snippet"
+msgid_plural "Successfully restored %1 snippets"
+msgstr[0] "Успішно відновлено %1 сніпет"
+msgstr[1] "Успішно відновлено %1 сніпети"
+msgstr[2] "Успішно відновлено %1 сніпетів"
+msgstr[3] "Успішно відновлено %1 сніпет"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid backup format"
+msgstr "Неправильний формат резервної копії"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy and save the contents below to back up your snippets:"
+msgstr "Скопіюйте наведений нижче текст для створення резервної копії:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Paste the backup contents below to restore your snippets:"
+msgstr "Вставте вміст резервної копії нижче для відновлення:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Contents"
+msgstr "Вміст резервної копії"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy"
+msgstr "Копіювати"
 
 #: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
@@ -42,6 +98,14 @@ msgstr "Видалити"
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Додати"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Backup"
+msgstr "Зберегти"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Restore"
+msgstr "Відновити"
 
 #: package/contents/ui/main.qml
 msgid "Search for snippets..."
