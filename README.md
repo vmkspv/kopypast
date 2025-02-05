@@ -4,7 +4,18 @@
 
 _Kopypast_ is a KDE Plasma applet for quick interaction with text snippets.
 
-<img src="preview.png" width="742" title="Popup widget">
+<img src="preview.png" width="748" title="Popup widget">
+
+## Installation
+
+<a href="https://store.kde.org/p/2258147">
+  <img src="https://kde.org/stuff/clipart/logo/kde-logo-grey-w-slug-vectorized.svg" width="64" align="left"/>
+</a>
+
+The recommended installation method is via the [KDE Store](https://store.kde.org/p/2258147).  
+Plasmoid can be easily added from Plasma Widget Explorer or Discover (KDE Software Center).
+
+The package for manual installation is available in the [releases](https://github.com/vmkspv/kopypast/releases) section.
 
 ## Building from source
 
