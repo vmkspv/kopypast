@@ -4,6 +4,18 @@
 
 _Kopypast_ is a KDE Plasma applet for quick interaction with text snippets.
 
+<p align="center">
+  <a href="https://github.com/vmkspv/kopypast/actions/workflows/plasmoid.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/vmkspv/kopypast/plasmoid.yml?logo=kdeplasma&logoColor=fff&labelColor=0f3266&color=467dcf"/>
+  </a>
+  <a href="https://github.com/vmkspv/kopypast/releases/latest">
+    <img src="https://img.shields.io/github/v/release/vmkspv/kopypast?logo=github&logoColor=fff&labelColor=0f3266&color=467dcf"/>
+  </a>
+  <a href="https://store.kde.org/p/2258147">
+    <img src="https://img.shields.io/github/downloads/vmkspv/kopypast/total?logo=kde&logoColor=fff&labelColor=0f3266&color=467dcf"/>
+  </a>
+</p>
+
 <img src="preview.png" width="748" title="Popup widget">
 
 ## Installation
