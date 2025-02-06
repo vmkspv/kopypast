@@ -24,6 +24,13 @@ Dialog {
     property bool isValid: !isBackup && textArea.text !== ""
     property bool initializing: true
 
+    onOpened: {
+        if (!isBackup) {
+            initializing = true
+            standardButton(Dialog.Ok).enabled = false
+        }
+    }
+
     QtObject {
         id: clipboard
         property string content: ""
@@ -46,6 +53,9 @@ Dialog {
         if (visible && !isBackup && initializing) {
             standardButton(Dialog.Ok).enabled = false
             initializing = false
+        }
+        if (!visible && !isBackup) {
+            textArea.clear()
         }
     }
 
