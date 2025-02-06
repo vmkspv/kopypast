@@ -6,7 +6,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
 Dialog {
@@ -121,7 +120,7 @@ Dialog {
         anchors.fill: parent
         spacing: Kirigami.Units.smallSpacing
 
-        Text {
+        Label {
             Layout.fillWidth: true
             text: isBackup
                 ? i18n("Copy and save the contents below to back up your snippets:")
@@ -135,7 +134,7 @@ Dialog {
             Layout.fillHeight: true
             Layout.topMargin: Kirigami.Units.smallSpacing
 
-            PlasmaComponents.TextArea {
+            TextArea {
                 id: textArea
                 width: parent.width
                 readOnly: isBackup
@@ -147,7 +146,7 @@ Dialog {
         }
     }
 
-    PlasmaComponents.Button {
+    ToolButton {
         visible: isBackup
         parent: textArea
         anchors {
@@ -159,10 +158,10 @@ Dialog {
         flat: true
         icon.name: copied ? "dialog-ok-apply" : "edit-copy"
         icon.color: copied ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
-        display: PlasmaComponents.Button.IconOnly
-        PlasmaComponents.ToolTip.text: i18n("Copy")
-        PlasmaComponents.ToolTip.visible: hovered
-        PlasmaComponents.ToolTip.delay: Kirigami.Units.toolTipDelay
+        display: ToolButton.IconOnly
+        ToolTip.text: i18n("Copy")
+        ToolTip.visible: hovered
+        ToolTip.delay: Kirigami.Units.toolTipDelay
 
         onClicked: {
             clipboard.content = textArea.text

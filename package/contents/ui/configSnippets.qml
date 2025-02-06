@@ -4,9 +4,9 @@
 */
 
 import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kcmutils
-import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 import "." as Local
 
@@ -54,7 +54,7 @@ SimpleKCM {
                 explanation: i18n("Add your first snippet using the button below")
             }
 
-            PlasmaComponents.ScrollView {
+            ScrollView {
                 anchors.fill: parent
                 visible: snippetModel.count > 0
 
@@ -76,14 +76,14 @@ SimpleKCM {
                                 Layout.fillWidth: true
                                 spacing: 1
 
-                                PlasmaComponents.Label {
+                                Label {
                                     Layout.fillWidth: true
                                     text: modelData.title
                                     elide: Text.ElideRight
                                     maximumLineCount: 1
                                 }
 
-                                PlasmaComponents.Label {
+                                Label {
                                     Layout.fillWidth: true
                                     text: modelData.text
                                     elide: Text.ElideRight
@@ -97,22 +97,22 @@ SimpleKCM {
                                 spacing: Kirigami.Units.smallSpacing
                                 Layout.rightMargin: Kirigami.Units.smallSpacing
 
-                                PlasmaComponents.ToolButton {
+                                ToolButton {
                                     icon.name: "document-edit"
-                                    display: PlasmaComponents.ToolButton.IconOnly
+                                    display: ToolButton.IconOnly
                                     onClicked: snippetDialog.editSnippet(index)
-                                    PlasmaComponents.ToolTip.text: i18n("Edit")
-                                    PlasmaComponents.ToolTip.visible: hovered
-                                    PlasmaComponents.ToolTip.delay: Kirigami.Units.toolTipDelay
+                                    ToolTip.text: i18n("Edit")
+                                    ToolTip.visible: hovered
+                                    ToolTip.delay: Kirigami.Units.toolTipDelay
                                 }
 
-                                PlasmaComponents.ToolButton {
+                                ToolButton {
                                     icon.name: "edit-delete"
-                                    display: PlasmaComponents.ToolButton.IconOnly
+                                    display: ToolButton.IconOnly
                                     onClicked: snippetModel.remove(index)
-                                    PlasmaComponents.ToolTip.text: i18n("Delete")
-                                    PlasmaComponents.ToolTip.visible: hovered
-                                    PlasmaComponents.ToolTip.delay: Kirigami.Units.toolTipDelay
+                                    ToolTip.text: i18n("Delete")
+                                    ToolTip.visible: hovered
+                                    ToolTip.delay: Kirigami.Units.toolTipDelay
                                 }
                             }
                         }
@@ -125,14 +125,14 @@ SimpleKCM {
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.smallSpacing
 
-            PlasmaComponents.Button {
+            Button {
                 icon.name: "list-add"
                 text: i18n("Add Snippet")
                 onClicked: snippetDialog.createSnippet()
             }
             Item { Layout.fillWidth: true }
 
-            PlasmaComponents.Button {
+            Button {
                 icon.name: "document-export"
                 text: i18n("Backup")
                 onClicked: {
@@ -141,7 +141,7 @@ SimpleKCM {
                 }
             }
 
-            PlasmaComponents.Button {
+            Button {
                 icon.name: "document-import"
                 text: i18n("Restore")
                 onClicked: {

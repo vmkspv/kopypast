@@ -6,7 +6,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 
 Dialog {
@@ -67,7 +66,7 @@ Dialog {
         anchors.fill: parent
         spacing: Kirigami.Units.smallSpacing
 
-        PlasmaComponents.TextField {
+        TextField {
             id: titleField
             Layout.fillWidth: true
             Layout.bottomMargin: Kirigami.Units.smallSpacing
@@ -79,7 +78,7 @@ Dialog {
             Layout.fillHeight: true
             Layout.topMargin: Kirigami.Units.smallSpacing
 
-            PlasmaComponents.TextArea {
+            TextArea {
                 id: textArea
                 width: parent.width
                 placeholderText: i18n("Snippet Text")

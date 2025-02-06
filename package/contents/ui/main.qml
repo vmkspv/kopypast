@@ -7,7 +7,6 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.plasma.plasmoid
-import org.kde.plasma.components as PlasmaComponents
 import org.kde.kirigami as Kirigami
 import "." as Local
 
@@ -74,32 +73,22 @@ PlasmoidItem {
         Layout.maximumHeight: Screen.height
         spacing: 0
 
-        PlasmaComponents.TextField {
+        Kirigami.SearchField {
             id: searchField
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.smallSpacing
             placeholderText: i18n("Search for snippets...")
-            clearButtonShown: true
             onTextChanged: root.searchQuery = text
-
-            Kirigami.Icon {
-                anchors {
-                    left: parent.left
-                    verticalCenter: parent.verticalCenter
-                    leftMargin: Kirigami.Units.smallSpacing
-                }
-                width: Kirigami.Units.iconSizes.small
-                height: width
-                source: "search"
-            }
-            leftPadding: Kirigami.Units.iconSizes.small + (2 * Kirigami.Units.smallSpacing)
+            selectByMouse: true
+            persistentSelection: false
+            Keys.onEscapePressed: clear()
         }
 
-        PlasmaComponents.ScrollView {
+        ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            contentItem: ListView {
+            ListView {
                 id: snippetList
                 model: {
                     if (!root.searchQuery) return snippetModel.snippets
@@ -142,14 +131,14 @@ PlasmoidItem {
                         Layout.fillWidth: true
                         spacing: 1
 
-                        PlasmaComponents.Label {
+                        Label {
                             Layout.fillWidth: true
                             text: modelData.title
                             elide: Text.ElideRight
                             maximumLineCount: 1
                         }
 
-                        PlasmaComponents.Label {
+                        Label {
                             Layout.fillWidth: true
                             text: modelData.text
                             elide: Text.ElideRight
@@ -167,15 +156,15 @@ PlasmoidItem {
             }
         }
 
-        PlasmaComponents.ToolBar {
+        ToolBar {
             Layout.fillWidth: true
-            position: PlasmaComponents.ToolBar.Footer
+            position: ToolBar.Footer
 
             RowLayout {
                 anchors.fill: parent
                 spacing: Kirigami.Units.smallSpacing
 
-                PlasmaComponents.Label {
+                Label {
                     Layout.leftMargin: Kirigami.Units.smallSpacing
                     text: i18np("%1 snippet", "%1 snippets", snippetModel.count)
                     opacity: 0.6
@@ -183,13 +172,13 @@ PlasmoidItem {
 
                 Item { Layout.fillWidth: true }
 
-                PlasmaComponents.ToolButton {
+                ToolButton {
                     icon.name: "configure"
-                    display: PlasmaComponents.AbstractButton.IconOnly
+                    display: ToolButton.IconOnly
                     onClicked: plasmoid.internalAction("configure").trigger()
-                    PlasmaComponents.ToolTip.text: i18n("Configure")
-                    PlasmaComponents.ToolTip.visible: hovered
-                    PlasmaComponents.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    ToolTip.text: i18n("Configure")
+                    ToolTip.visible: hovered
+                    ToolTip.delay: Kirigami.Units.toolTipDelay
                 }
             }
         }
