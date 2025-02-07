@@ -34,7 +34,6 @@ SimpleKCM {
 
     ColumnLayout {
         anchors.fill: parent
-        spacing: 0
 
         Item {
             Layout.fillWidth: true
@@ -61,58 +60,87 @@ SimpleKCM {
                 ListView {
                     id: snippetList
                     model: snippetModel.snippets
-                    interactive: true
                     clip: true
 
-                    delegate: Kirigami.SwipeListItem {
-                        id: snippetDelegate
+                    move: Transition {
+                        NumberAnimation {
+                            properties: "y"
+                            duration: Kirigami.Units.longDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                    }
+
+                    moveDisplaced: Transition {
+                        NumberAnimation {
+                            properties: "y"
+                            duration: Kirigami.Units.longDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                    }
+
+                    delegate: Item {
+                        id: wrapper
                         width: ListView.view.width
-                        swipe.enabled: false
+                        height: snippetDelegate.implicitHeight
 
-                        contentItem: RowLayout {
-                            spacing: Kirigami.Units.smallSpacing
+                        Kirigami.SwipeListItem {
+                            id: snippetDelegate
+                            width: parent.width
+                            swipe.enabled: false
 
-                            ColumnLayout {
-                                Layout.fillWidth: true
-                                spacing: 1
-
-                                Label {
-                                    Layout.fillWidth: true
-                                    text: modelData.title
-                                    elide: Text.ElideRight
-                                    maximumLineCount: 1
-                                }
-
-                                Label {
-                                    Layout.fillWidth: true
-                                    text: modelData.text
-                                    elide: Text.ElideRight
-                                    maximumLineCount: 1
-                                    opacity: 0.7
-                                    font.pointSize: Kirigami.Theme.smallFont.pointSize
-                                }
-                            }
-
-                            RowLayout {
+                            contentItem: RowLayout {
                                 spacing: Kirigami.Units.smallSpacing
-                                Layout.rightMargin: Kirigami.Units.smallSpacing
 
-                                ToolButton {
-                                    icon.name: "document-edit"
-                                    display: ToolButton.IconOnly
-                                    onClicked: snippetDialog.editSnippet(index)
-                                    ToolTip.text: i18n("Edit")
-                                    ToolTip.visible: hovered
-                                    ToolTip.delay: Kirigami.Units.toolTipDelay
+                                Kirigami.ListItemDragHandle {
+                                    listItem: snippetDelegate
+                                    listView: snippetList
+                                    visible: snippetList.count > 1
+                                    onMoveRequested: function(oldIndex, newIndex) {
+                                        snippetModel.move(oldIndex, newIndex)
+                                    }
                                 }
 
-                                ToolButton {
-                                    icon.name: "edit-delete"
-                                    display: ToolButton.IconOnly
-                                    onClicked: snippetModel.remove(index)
-                                    ToolTip.text: i18n("Delete")
-                                    ToolTip.visible: hovered
-                                    ToolTip.delay: Kirigami.Units.toolTipDelay
+                                ColumnLayout {
+                                    Layout.fillWidth: true
+
+                                    Label {
+                                        Layout.fillWidth: true
+                                        text: modelData.title
+                                        elide: Text.ElideRight
+                                        maximumLineCount: 1
+                                    }
+
+                                    Label {
+                                        Layout.fillWidth: true
+                                        text: modelData.text
+                                        elide: Text.ElideRight
+                                        maximumLineCount: 1
+                                        opacity: 0.7
+                                        font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                    }
+                                }
+
+                                RowLayout {
+                                    spacing: Kirigami.Units.smallSpacing
+                                    Layout.rightMargin: Kirigami.Units.smallSpacing
+
+                                    ToolButton {
+                                        icon.name: "document-edit"
+                                        display: ToolButton.IconOnly
+                                        onClicked: snippetDialog.editSnippet(index)
+                                        ToolTip.text: i18n("Edit")
+                                        ToolTip.visible: hovered
+                                        ToolTip.delay: Kirigami.Units.toolTipDelay
+                                    }
+
+                                    ToolButton {
+                                        icon.name: "edit-delete"
+                                        display: ToolButton.IconOnly
+                                        onClicked: snippetModel.remove(index)
+                                        ToolTip.text: i18n("Delete")
+                                        ToolTip.visible: hovered
+                                        ToolTip.delay: Kirigami.Units.toolTipDelay
+                                    }
                                 }
                             }
                         }

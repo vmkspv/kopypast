@@ -30,17 +30,32 @@ Item {
     }
 
     function append(item) {
-        snippets = [...snippets, item]
-        configValue = JSON.stringify(snippets)
+        const snippetsArray = [...snippets]
+        snippetsArray.push(item)
+        updateModel(snippetsArray)
     }
 
     function set(index, item) {
-        snippets = [...snippets.slice(0, index), item, ...snippets.slice(index + 1)]
-        configValue = JSON.stringify(snippets)
+        const snippetsArray = [...snippets]
+        snippetsArray[index] = item
+        updateModel(snippetsArray)
     }
 
     function remove(index) {
-        snippets = [...snippets.slice(0, index), ...snippets.slice(index + 1)]
-        configValue = JSON.stringify(snippets)
+        const snippetsArray = [...snippets]
+        snippetsArray.splice(index, 1)
+        updateModel(snippetsArray)
+    }
+
+    function move(from, to) {
+        if (from === to) return
+        const snippetsArray = [...snippets]
+        snippetsArray.splice(to, 0, snippetsArray.splice(from, 1)[0])
+        updateModel(snippetsArray)
+    }
+
+    function updateModel(newSnippets) {
+        snippets = newSnippets
+        configValue = JSON.stringify(newSnippets)
     }
 }
