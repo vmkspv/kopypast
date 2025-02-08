@@ -157,6 +157,10 @@ SimpleKCM {
                 icon.name: "list-add"
                 text: i18n("Add Snippet")
                 onClicked: snippetDialog.createSnippet()
+                enabled: snippetModel.count < plasmoid.configuration.maxSnippets
+                ToolTip.text: i18n("Maximum limit reached")
+                ToolTip.visible: !enabled && hovered
+                ToolTip.delay: Kirigami.Units.toolTipDelay
             }
             Item { Layout.fillWidth: true }
 

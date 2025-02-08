@@ -26,5 +26,11 @@
         <entry name="showOnlyTitles" type="Bool">
             <default>false</default>
         </entry>
+        <entry name="maxSnippets" type="Int">
+            <default>50</default>
+        </entry>
+        <entry name="useKbdNavigation" type="Bool">
+            <default>false</default>
+        </entry>
     </group>
 </kcfg>

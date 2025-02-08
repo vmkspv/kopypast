@@ -77,6 +77,9 @@ PlasmoidItem {
         Layout.maximumHeight: Screen.height
         spacing: 0
 
+        Keys.forwardTo: [snippetList]
+        focus: !plasmoid.configuration.showSearchField || !searchField.enabled
+
         Kirigami.SearchField {
             id: searchField
             Layout.fillWidth: true
@@ -87,6 +90,8 @@ PlasmoidItem {
             persistentSelection: false
             Keys.onEscapePressed: clear()
             visible: plasmoid.configuration.showSearchField
+            enabled: visible
+            focus: plasmoid.configuration.showSearchField && plasmoid.configuration.useKbdNavigation
         }
 
         ScrollView {
@@ -95,14 +100,30 @@ PlasmoidItem {
 
             ListView {
                 id: snippetList
-                model: {
-                    if (!root.searchQuery) return snippetModel.snippets
-                    return snippetModel.snippets.filter(snippet =>
+                property var filteredModel: root.searchQuery
+                    ? snippetModel.snippets.filter(snippet =>
                         snippet.title.toLowerCase().includes(root.searchQuery.toLowerCase()) ||
                         snippet.text.toLowerCase().includes(root.searchQuery.toLowerCase())
-                    )
-                }
+                      )
+                    : snippetModel.snippets
+
+                model: filteredModel
                 clip: true
+                focus: plasmoid.configuration.useKbdNavigation && !searchField.enabled
+                keyNavigationEnabled: plasmoid.configuration.useKbdNavigation
+                currentIndex: plasmoid.expanded ? 0 : -1
+
+                function handleSelection() {
+                    if (currentIndex >= 0) {
+                        clipboard.content = model[currentIndex].text
+                        searchField.clear()
+                        root.searchQuery = ""
+                        root.expanded = false
+                    }
+                }
+
+                Keys.onEnterPressed: handleSelection()
+                Keys.onReturnPressed: handleSelection()
 
                 Kirigami.PlaceholderMessage {
                     anchors.centerIn: parent
@@ -131,6 +152,7 @@ PlasmoidItem {
                 delegate: Kirigami.SwipeListItem {
                     id: snippetDelegate
                     width: ListView.view.width
+                    highlighted: plasmoid.configuration.useKbdNavigation && ListView.isCurrentItem
 
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
@@ -158,6 +180,18 @@ PlasmoidItem {
                         clipboard.content = modelData.text
                         root.expanded = false
                     }
+                }
+            }
+        }
+
+        Connections {
+            target: root
+            function onExpandedChanged() {
+                if (!root.expanded) {
+                    snippetList.currentIndex = -1
+                    snippetList.positionViewAtBeginning()
+                    searchField.clear()
+                    root.searchQuery = ""
                 }
             }
         }

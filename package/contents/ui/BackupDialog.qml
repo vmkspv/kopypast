@@ -102,6 +102,20 @@ Dialog {
                         return
                     }
 
+                    if (validSnippets.length + snippetModel.snippets.length > plasmoid.configuration.maxSnippets) {
+                        const remaining = plasmoid.configuration.maxSnippets - snippetModel.snippets.length
+                        if (remaining <= 0) {
+                            applicationWindow().showPassiveNotification(
+                                i18n("Cannot restore snippets: maximum limit (%1) reached",
+                                     plasmoid.configuration.maxSnippets), 3000)
+                            return
+                        }
+                        validSnippets.splice(remaining)
+                        applicationWindow().showPassiveNotification(
+                            i18n("Only restored %1 snippets due to maximum limit (%2)",
+                                 remaining, plasmoid.configuration.maxSnippets), 3000)
+                    }
+
                     const updatedSnippets = [...snippetModel.snippets, ...validSnippets]
                     snippetModel.snippets = updatedSnippets
                     snippetModel.configValue = JSON.stringify(updatedSnippets)
