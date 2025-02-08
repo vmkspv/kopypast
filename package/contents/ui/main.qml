@@ -13,7 +13,9 @@ import "." as Local
 PlasmoidItem {
     id: root
 
-    preferredRepresentation: compactRepresentation
+    preferredRepresentation: plasmoid.formFactor === Plasma.Horizontal || plasmoid.formFactor === Plasma.Vertical
+        ? compactRepresentation
+        : fullRepresentation
 
     property string searchQuery: ""
 
@@ -69,12 +71,12 @@ PlasmoidItem {
 
     fullRepresentation: ColumnLayout {
         id: fullRep
-        Layout.minimumWidth: Kirigami.Units.gridUnit * 20
-        Layout.minimumHeight: Kirigami.Units.gridUnit * 18
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 20
-        Layout.preferredHeight: Kirigami.Units.gridUnit * 28
-        Layout.maximumWidth: Kirigami.Units.gridUnit * 24
-        Layout.maximumHeight: Screen.height
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 16
+        Layout.preferredWidth: plasmoid.configuration.width || Kirigami.Units.gridUnit * 20
+        Layout.preferredHeight: plasmoid.configuration.height || Kirigami.Units.gridUnit * 28
+        Layout.maximumWidth: Plasmoid.availableScreenRect.width
+        Layout.maximumHeight: Plasmoid.availableScreenRect.height
         spacing: 0
 
         Keys.forwardTo: [snippetList]
