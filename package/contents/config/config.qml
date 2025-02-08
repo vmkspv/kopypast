@@ -12,4 +12,9 @@ ConfigModel {
         icon: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast.svg")
         source: "configSnippets.qml"
     }
+    ConfigCategory {
+        name: i18n("General")
+        icon: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-config.svg")
+        source: "configGeneral.qml"
+    }
 }

@@ -51,7 +51,11 @@ PlasmoidItem {
     compactRepresentation: Item {
         Kirigami.Icon {
             anchors.fill: parent
-            source: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast.svg")
+            source: plasmoid.configuration.useSymbolicIcon
+                ? (Kirigami.Theme.textColor.hslLightness < 0.5
+                    ? Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-light.svg")
+                    : Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-dark.svg"))
+                : Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast.svg")
             active: mouseArea.containsMouse
         }
 
@@ -82,6 +86,7 @@ PlasmoidItem {
             selectByMouse: true
             persistentSelection: false
             Keys.onEscapePressed: clear()
+            visible: plasmoid.configuration.showSearchField
         }
 
         ScrollView {
@@ -145,6 +150,7 @@ PlasmoidItem {
                             maximumLineCount: 1
                             opacity: 0.7
                             font.pointSize: Kirigami.Theme.smallFont.pointSize
+                            visible: !plasmoid.configuration.showOnlyTitles
                         }
                     }
 
@@ -159,6 +165,7 @@ PlasmoidItem {
         ToolBar {
             Layout.fillWidth: true
             position: ToolBar.Footer
+            visible: plasmoid.configuration.showToolbarPanel
 
             RowLayout {
                 anchors.fill: parent

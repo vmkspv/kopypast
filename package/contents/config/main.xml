@@ -10,8 +10,21 @@
     <kcfgfile name=""/>
     <group name="Snippets">
         <entry name="snippets" type="String">
-            <label>Snippets</label>
             <default>[]</default>
+        </entry>
+    </group>
+    <group name="General">
+        <entry name="useSymbolicIcon" type="Bool">
+            <default>false</default>
+        </entry>
+        <entry name="showSearchField" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="showToolbarPanel" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="showOnlyTitles" type="Bool">
+            <default>false</default>
         </entry>
     </group>
 </kcfg>
