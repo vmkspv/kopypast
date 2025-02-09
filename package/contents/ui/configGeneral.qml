@@ -17,6 +17,8 @@ SimpleKCM {
     property alias cfg_maxSnippets: maxSnippetsSpinner.value
     property alias cfg_useKbdNavigation: useKbdNavigation.checked
 
+    readonly property bool isPanel: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
+
     ColumnLayout {
         anchors {
             left: parent.left
@@ -58,6 +60,8 @@ SimpleKCM {
                     id: useSymbolicIcon
                     text: i18n("Monochrome icon")
                     Layout.fillWidth: true
+                    visible: isPanel
+                    enabled: visible
                 }
 
                 Label {
@@ -67,6 +71,7 @@ SimpleKCM {
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: useSymbolicIcon.indicator.width + useSymbolicIcon.spacing
+                    visible: isPanel
                 }
 
                 CheckBox {
@@ -181,6 +186,8 @@ SimpleKCM {
                     text: i18n("Keyboard navigation")
                     Layout.fillWidth: true
                     Layout.topMargin: Kirigami.Units.smallSpacing
+                    visible: isPanel
+                    enabled: visible
                 }
 
                 Label {
@@ -189,6 +196,7 @@ SimpleKCM {
                     wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
+                    visible: isPanel
                 }
             }
         }

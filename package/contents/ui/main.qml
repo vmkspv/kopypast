@@ -13,7 +13,7 @@ import "." as Local
 PlasmoidItem {
     id: root
 
-    preferredRepresentation: plasmoid.formFactor === Plasma.Horizontal || plasmoid.formFactor === Plasma.Vertical
+    preferredRepresentation: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
         ? compactRepresentation
         : fullRepresentation
 
@@ -70,14 +70,16 @@ PlasmoidItem {
     }
 
     fullRepresentation: ColumnLayout {
-        id: fullRep
-        Layout.minimumWidth: Kirigami.Units.gridUnit * 10
-        Layout.minimumHeight: Kirigami.Units.gridUnit * 16
-        Layout.preferredWidth: plasmoid.configuration.width || Kirigami.Units.gridUnit * 20
-        Layout.preferredHeight: plasmoid.configuration.height || Kirigami.Units.gridUnit * 28
-        Layout.maximumWidth: Plasmoid.availableScreenRect.width
-        Layout.maximumHeight: Plasmoid.availableScreenRect.height
-        spacing: 0
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 14
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 18
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 20
+        Layout.preferredHeight: Kirigami.Units.gridUnit * 28
+        Layout.maximumWidth: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
+            ? Kirigami.Units.gridUnit * 28
+            : root.width
+        Layout.maximumHeight: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
+            ? Kirigami.Units.gridUnit * 42
+            : root.height
 
         Keys.forwardTo: [snippetList]
         focus: !plasmoid.configuration.showSearchField || !searchField.enabled
