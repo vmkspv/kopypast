@@ -18,6 +18,7 @@ PlasmoidItem {
         : fullRepresentation
 
     property string searchQuery: ""
+    hideOnWindowDeactivate: !plasmoid.configuration.isPinned
 
     QtObject {
         id: clipboard
@@ -92,7 +93,10 @@ PlasmoidItem {
             onTextChanged: root.searchQuery = text
             selectByMouse: true
             persistentSelection: false
-            Keys.onEscapePressed: clear()
+            Keys.onEscapePressed: {
+                clear()
+                root.expanded = false
+            }
             visible: plasmoid.configuration.showSearchField
             enabled: visible
             focus: plasmoid.configuration.showSearchField && plasmoid.configuration.useKbdNavigation
@@ -122,7 +126,9 @@ PlasmoidItem {
                         clipboard.content = model[currentIndex].text
                         searchField.clear()
                         root.searchQuery = ""
-                        root.expanded = false
+                        if (!plasmoid.configuration.isPinned) {
+                            root.expanded = false
+                        }
                     }
                 }
 
@@ -182,7 +188,9 @@ PlasmoidItem {
 
                     onClicked: {
                         clipboard.content = modelData.text
-                        root.expanded = false
+                        if (!plasmoid.configuration.isPinned) {
+                            root.expanded = false
+                        }
                     }
                 }
             }
@@ -191,7 +199,7 @@ PlasmoidItem {
         Connections {
             target: root
             function onExpandedChanged() {
-                if (!root.expanded) {
+                if (!root.expanded && !plasmoid.configuration.isPinned) {
                     snippetList.currentIndex = -1
                     snippetList.positionViewAtBeginning()
                     searchField.clear()
@@ -218,12 +226,30 @@ PlasmoidItem {
                 Item { Layout.fillWidth: true }
 
                 ToolButton {
+                    id: configButton
                     icon.name: "configure"
                     display: ToolButton.IconOnly
                     onClicked: plasmoid.internalAction("configure").trigger()
                     ToolTip.text: i18n("Configure")
                     ToolTip.visible: hovered
                     ToolTip.delay: Kirigami.Units.toolTipDelay
+                    KeyNavigation.right: pinButton
+                }
+
+                ToolButton {
+                    id: pinButton
+                    icon.name: "window-pin"
+                    display: ToolButton.IconOnly
+                    checkable: true
+                    checked: plasmoid.configuration.isPinned
+                    down: checked
+                    onToggled: plasmoid.configuration.isPinned = checked
+                    ToolTip.text: i18n("Keep Open")
+                    ToolTip.visible: hovered
+                    ToolTip.delay: Kirigami.Units.toolTipDelay
+                    KeyNavigation.left: configButton
+                    visible: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
+                    enabled: visible
                 }
             }
         }
