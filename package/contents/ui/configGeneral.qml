@@ -10,6 +10,8 @@ import org.kde.kcmutils
 import org.kde.kirigami as Kirigami
 
 SimpleKCM {
+    id: generalPage
+
     property alias cfg_useSymbolicIcon: useSymbolicIcon.checked
     property alias cfg_showSearchField: showSearchField.checked
     property alias cfg_showToolbarPanel: showToolbarPanel.checked
@@ -20,143 +22,131 @@ SimpleKCM {
     readonly property bool isPanel: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
 
     ColumnLayout {
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-            margins: Kirigami.Units.largeSpacing
-        }
-        spacing: Kirigami.Units.gridUnit
+        Layout.fillWidth: true
+        Layout.fillHeight: true
 
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: Kirigami.Units.largeSpacing * 2
+        Kirigami.FormLayout {
+            wideMode: true
+
+            Item { implicitHeight: Kirigami.Units.largeSpacing }
 
             ColumnLayout {
-                Layout.alignment: Qt.AlignTop
-                Layout.minimumWidth: Kirigami.Units.gridUnit * 12
-                Layout.maximumWidth: Kirigami.Units.gridUnit * 12
-                Layout.fillHeight: true
+                Kirigami.FormData.isSection: true
 
-                Label {
-                    Layout.fillWidth: true
+                Kirigami.Heading {
                     text: i18n("Appearance")
+                    level: 2
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Configure how the widget looks")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
                 }
             }
 
+            Item { implicitHeight: Kirigami.Units.smallSpacing }
+
             ColumnLayout {
-                Layout.fillWidth: true
-                spacing: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.largeSpacing
 
                 CheckBox {
                     id: useSymbolicIcon
                     text: i18n("Monochrome icon")
-                    Layout.fillWidth: true
                     visible: isPanel
                     enabled: visible
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Use a monochrome icon that matches the color scheme")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: useSymbolicIcon.indicator.width + useSymbolicIcon.spacing
                     visible: isPanel
                 }
+            }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
 
                 CheckBox {
                     id: showSearchField
                     text: i18n("Enable search bar")
-                    Layout.fillWidth: true
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Show a search field at the top of the widget")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: showSearchField.indicator.width + showSearchField.spacing
                 }
+            }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
 
                 CheckBox {
                     id: showToolbarPanel
                     text: i18n("Show bottom toolbar")
-                    Layout.fillWidth: true
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Place a toolbar with counter and buttons at the bottom")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: showToolbarPanel.indicator.width + showToolbarPanel.spacing
                 }
+            }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
 
                 CheckBox {
                     id: showOnlyTitles
                     text: i18n("Hide snippet previews")
-                    Layout.fillWidth: true
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Show only snippet titles without content previews")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: showOnlyTitles.indicator.width + showOnlyTitles.spacing
                 }
             }
-        }
 
-        Kirigami.Separator {
-            Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-        }
+            Item { implicitHeight: Kirigami.Units.largeSpacing }
 
-        RowLayout {
-            Layout.fillWidth: true
-            spacing: Kirigami.Units.largeSpacing * 2
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+            }
+
+            Item { implicitHeight: Kirigami.Units.largeSpacing }
 
             ColumnLayout {
-                Layout.alignment: Qt.AlignTop
-                Layout.minimumWidth: Kirigami.Units.gridUnit * 12
-                Layout.maximumWidth: Kirigami.Units.gridUnit * 12
-                Layout.fillHeight: true
+                Kirigami.FormData.isSection: true
 
-                Label {
-                    Layout.fillWidth: true
+                Kirigami.Heading {
                     text: i18n("Functionality")
+                    level: 2
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Configure behavior and limitations")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
                 }
             }
 
+            Item { implicitHeight: Kirigami.Units.smallSpacing }
+
             ColumnLayout {
-                Layout.fillWidth: true
-                spacing: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.largeSpacing
 
                 RowLayout {
-                    Layout.fillWidth: true
                     spacing: Kirigami.Units.smallSpacing
 
                     Label {
@@ -174,35 +164,32 @@ SimpleKCM {
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Limit the number of snippets for optimal performance")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                 }
+            }
+
+            Item { implicitHeight: Kirigami.Units.smallSpacing }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
 
                 CheckBox {
                     id: useKbdNavigation
                     text: i18n("Keyboard navigation")
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.smallSpacing
                     visible: isPanel
                     enabled: visible
                 }
 
                 Label {
-                    Layout.fillWidth: true
                     text: i18n("Use the keyboard keys to navigate and select snippets")
-                    wrapMode: Text.WordWrap
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
+                    leftPadding: useKbdNavigation.indicator.width + useKbdNavigation.spacing
                     visible: isPanel
                 }
             }
-        }
-
-        Item {
-            Layout.fillHeight: true
         }
     }
 }

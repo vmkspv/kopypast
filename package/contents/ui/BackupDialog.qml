@@ -112,15 +112,10 @@ Dialog {
                         }
                         validSnippets.splice(remaining)
                         applicationWindow().showPassiveNotification(
-                            i18n("Only restored %1 snippets due to maximum limit (%2)",
-                                 remaining, plasmoid.configuration.maxSnippets), 3000)
-                    }
-
-                    const updatedSnippets = [...snippetModel.snippets, ...validSnippets]
-                    snippetModel.snippets = updatedSnippets
-                    snippetModel.configValue = JSON.stringify(updatedSnippets)
-
-                    if (duplicates.length > 0) {
+                            i18np("Only restored %1 snippet due to maximum limit",
+                                 "Only restored %1 snippets due to maximum limit",
+                                 remaining), 3000)
+                    } else if (duplicates.length > 0) {
                         applicationWindow().showPassiveNotification(
                             i18np("Restored %1 snippet, skipped %2 duplicate(s)",
                                  "Restored %1 snippets, skipped %2 duplicate(s)",
@@ -131,6 +126,10 @@ Dialog {
                                  "Successfully restored %1 snippets",
                                  validSnippets.length), 3000)
                     }
+
+                    const updatedSnippets = [...snippetModel.snippets, ...validSnippets]
+                    snippetModel.snippets = updatedSnippets
+                    snippetModel.configValue = JSON.stringify(updatedSnippets)
                 } else {
                     applicationWindow().showPassiveNotification(i18n("Invalid backup format"), 3000)
                 }
