@@ -17,6 +17,7 @@ PlasmoidItem {
         ? compactRepresentation
         : fullRepresentation
 
+    property bool isCopied: false
     property string searchQuery: ""
     hideOnWindowDeactivate: !plasmoid.configuration.isPinned
 
@@ -29,6 +30,12 @@ PlasmoidItem {
                 clipboardHelper.selectAll()
                 clipboardHelper.copy()
                 content = ""
+
+                if (plasmoid.configuration.isPinned ||
+                    !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
+                    root.isCopied = true
+                    resetTimer.restart()
+                }
             }
         }
     }
@@ -49,6 +56,12 @@ PlasmoidItem {
         function onSnippetsChanged() {
             snippetModel.loadFromConfig(plasmoid.configuration.snippets)
         }
+    }
+
+    Timer {
+        id: resetTimer
+        interval: 2000
+        onTriggered: root.isCopied = false
     }
 
     compactRepresentation: Item {
@@ -98,7 +111,7 @@ PlasmoidItem {
                 root.expanded = false
             }
             visible: plasmoid.configuration.showSearchField
-            enabled: visible
+            enabled: visible && snippetModel.count > 0
             focus: plasmoid.configuration.showSearchField && plasmoid.configuration.useKbdNavigation
         }
 
@@ -166,7 +179,6 @@ PlasmoidItem {
 
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
-                        spacing: 1
 
                         Label {
                             Layout.fillWidth: true
@@ -222,8 +234,17 @@ PlasmoidItem {
                     text: i18np("%1 snippet", "%1 snippets", snippetModel.count)
                     opacity: 0.6
                 }
-
                 Item { Layout.fillWidth: true }
+
+                Label {
+                    text: i18n("Copied!")
+                    opacity: root.isCopied ? 1 : 0
+                    color: Kirigami.Theme.textColor
+
+                    Behavior on opacity {
+                        NumberAnimation { duration: 200 }
+                    }
+                }
 
                 ToolButton {
                     id: configButton
