@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-02-03 16:00+0300\n"
+"POT-Creation-Date: 2025-02-12 17:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,10 @@ msgstr ""
 
 #: package/contents/config/config.qml
 msgid "Snippets"
+msgstr ""
+
+#: package/contents/config/config.qml
+msgid "General"
 msgstr ""
 
 #: package/contents/ui/BackupDialog.qml
@@ -41,6 +45,16 @@ msgstr ""
 #: package/contents/ui/BackupDialog.qml
 msgid "All snippets are duplicates"
 msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Cannot restore snippets: maximum limit (%1) reached"
+msgstr ""
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Only restored %1 snippet due to maximum limit"
+msgid_plural "Only restored %1 snippets due to maximum limit"
+msgstr[0] ""
+msgstr[1] ""
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Restored %1 snippet, skipped %2 duplicate(s)"
@@ -74,6 +88,70 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
+#: package/contents/ui/configGeneral.qml
+msgid "Appearance"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure how the widget looks"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Monochrome icon"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use a monochrome icon that matches the color scheme"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enable search bar"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show a search field at the top of the widget"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show bottom toolbar"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Place a toolbar with counter and buttons at the bottom"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Hide snippet previews"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show only snippet titles without content previews"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Functionality"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure behavior and limitations"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Maximum number of snippets:"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Limit the number of snippets for optimal performance"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Keyboard navigation"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use the keyboard keys to navigate and select snippets"
+msgstr ""
+
 #: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
 msgstr ""
@@ -93,6 +171,10 @@ msgstr ""
 #: package/contents/ui/configSnippets.qml
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
 msgstr ""
 
 #: package/contents/ui/configSnippets.qml
@@ -130,7 +212,15 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: package/contents/ui/main.qml
+msgid "Copied!"
+msgstr ""
+
+#: package/contents/ui/main.qml
 msgid "Configure"
+msgstr ""
+
+#: package/contents/ui/main.qml
+msgid "Keep Open"
 msgstr ""
 
 #: package/contents/ui/SnippetDialog.qml

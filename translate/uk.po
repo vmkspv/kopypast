@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-02-03 16:00+0300\n"
-"PO-Revision-Date: 2025-02-03 17:00+0300\n"
+"POT-Creation-Date: 2025-02-12 17:00+0300\n"
+"PO-Revision-Date: 2025-02-12 18:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -21,6 +21,10 @@ msgstr ""
 #: package/contents/config/config.qml
 msgid "Snippets"
 msgstr "Сніпети"
+
+#: package/contents/config/config.qml
+msgid "General"
+msgstr "Загальне"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Backup Snippets"
@@ -40,7 +44,19 @@ msgstr "Неправильний формат сніпета"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "All snippets are duplicates"
-msgstr "Усі сніпети вже додано"
+msgstr "Усі сніпети вже додані"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Cannot restore snippets: maximum limit (%1) reached"
+msgstr "Неможливо відновити сніпети: досягнуто ліміт (%1)"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Only restored %1 snippet due to maximum limit"
+msgid_plural "Only restored %1 snippets due to maximum limit"
+msgstr[0] "Відновлено лише %1 сніпет через обмеження"
+msgstr[1] "Відновлено лише %1 сніпети через обмеження"
+msgstr[2] "Відновлено лише %1 сніпетів через обмеження"
+msgstr[3] "Відновлено лише %1 сніпет через обмеження"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Restored %1 snippet, skipped %2 duplicate(s)"
@@ -78,6 +94,70 @@ msgstr "Вміст резервної копії"
 msgid "Copy"
 msgstr "Копіювати"
 
+#: package/contents/ui/configGeneral.qml
+msgid "Appearance"
+msgstr "Зовнішній вигляд"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure how the widget looks"
+msgstr "Налаштуйте зовнішній вигляд віджета"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Monochrome icon"
+msgstr "Монохромна іконка"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use a monochrome icon that matches the color scheme"
+msgstr "Використовувати монохромну іконку відповідно до теми"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enable search bar"
+msgstr "Увімкнути панель пошуку"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show a search field at the top of the widget"
+msgstr "Показувати поле пошуку у верхній частині віджета"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show bottom toolbar"
+msgstr "Показати панель інструментів"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Place a toolbar with counter and buttons at the bottom"
+msgstr "Розмістити панель інструментів у нижній частині віджета"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Hide snippet previews"
+msgstr "Приховати попередній перегляд"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show only snippet titles without content previews"
+msgstr "Показувати лише заголовки сніпетів без вмісту"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Functionality"
+msgstr "Функціональність"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure behavior and limitations"
+msgstr "Налаштуйте поведінку та обмеження віджета"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Maximum number of snippets:"
+msgstr "Максимальна кількість сніпетів:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Limit the number of snippets for optimal performance"
+msgstr "Обмежте кількість сніпетів для оптимальної роботи"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Keyboard navigation"
+msgstr "Клавіатурна навігація"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use the keyboard keys to navigate and select snippets"
+msgstr "Використовувати клавіші для навігації та вибору сніпетів"
+
 #: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
 msgstr "Сніпети не додано"
@@ -98,6 +178,10 @@ msgstr "Видалити"
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Додати"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
+msgstr "Досягнуто максимальний ліміт"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Backup"
@@ -136,8 +220,16 @@ msgstr[2] "%1 сніпетів"
 msgstr[3] "%1 сніпет"
 
 #: package/contents/ui/main.qml
+msgid "Copied!"
+msgstr "Скопійовано!"
+
+#: package/contents/ui/main.qml
 msgid "Configure"
 msgstr "Налаштувати"
+
+#: package/contents/ui/main.qml
+msgid "Keep Open"
+msgstr "Тримати відкритим"
 
 #: package/contents/ui/SnippetDialog.qml
 msgid "Edit Snippet"
