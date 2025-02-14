@@ -8,6 +8,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.plasma.plasmoid
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.private as KirigamiPrivate
 import "." as Local
 
 PlasmoidItem {
@@ -20,30 +21,6 @@ PlasmoidItem {
     property bool isCopied: false
     property string searchQuery: ""
     hideOnWindowDeactivate: !plasmoid.configuration.isPinned
-
-    QtObject {
-        id: clipboard
-        property string content: ""
-        onContentChanged: {
-            if (content) {
-                clipboardHelper.text = content
-                clipboardHelper.selectAll()
-                clipboardHelper.copy()
-                content = ""
-
-                if (plasmoid.configuration.isPinned ||
-                    !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
-                    root.isCopied = true
-                    resetTimer.restart()
-                }
-            }
-        }
-    }
-
-    TextEdit {
-        id: clipboardHelper
-        visible: false
-    }
 
     Local.SnippetModel {
         id: snippetModel
@@ -136,9 +113,14 @@ PlasmoidItem {
 
                 function handleSelection() {
                     if (currentIndex >= 0) {
-                        clipboard.content = model[currentIndex].text
+                        KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(model[currentIndex].text)
                         searchField.clear()
                         root.searchQuery = ""
+                        if (plasmoid.configuration.isPinned ||
+                            !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
+                            root.isCopied = true
+                            resetTimer.restart()
+                        }
                         if (!plasmoid.configuration.isPinned) {
                             root.expanded = false
                         }
@@ -199,7 +181,12 @@ PlasmoidItem {
                     }
 
                     onClicked: {
-                        clipboard.content = modelData.text
+                        KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(modelData.text)
+                        if (plasmoid.configuration.isPinned ||
+                            !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
+                            root.isCopied = true
+                            resetTimer.restart()
+                        }
                         if (!plasmoid.configuration.isPinned) {
                             root.expanded = false
                         }

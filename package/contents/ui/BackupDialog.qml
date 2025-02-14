@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.private as KirigamiPrivate
 
 Dialog {
     id: dialog
@@ -29,24 +30,6 @@ Dialog {
             initializing = true
             standardButton(Dialog.Ok).enabled = false
         }
-    }
-
-    QtObject {
-        id: clipboard
-        property string content: ""
-        onContentChanged: {
-            if (content) {
-                clipboardHelper.text = content
-                clipboardHelper.selectAll()
-                clipboardHelper.copy()
-                content = ""
-            }
-        }
-    }
-
-    TextEdit {
-        id: clipboardHelper
-        visible: false
     }
 
     onVisibleChanged: {
@@ -187,7 +170,7 @@ Dialog {
         ToolTip.delay: Kirigami.Units.toolTipDelay
 
         onClicked: {
-            clipboard.content = textArea.text
+            KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(textArea.text)
             copied = true
             resetTimer.restart()
         }
