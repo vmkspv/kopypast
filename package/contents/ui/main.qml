@@ -114,15 +114,21 @@ PlasmoidItem {
                 function handleSelection() {
                     if (currentIndex >= 0) {
                         KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(model[currentIndex].text)
-                        searchField.clear()
-                        root.searchQuery = ""
                         if (plasmoid.configuration.isPinned ||
                             !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
                             root.isCopied = true
                             resetTimer.restart()
                         }
-                        if (!plasmoid.configuration.isPinned) {
-                            root.expanded = false
+                        if (plasmoid.formFactor === 2 || plasmoid.formFactor === 3) {
+                            if (!plasmoid.configuration.isPinned) {
+                                root.expanded = false
+                            } else if (plasmoid.configuration.clearSearchOnCopy) {
+                                searchField.clear()
+                                root.searchQuery = ""
+                            }
+                        } else if (plasmoid.configuration.clearSearchOnCopy) {
+                            searchField.clear()
+                            root.searchQuery = ""
                         }
                     }
                 }
@@ -187,8 +193,16 @@ PlasmoidItem {
                             root.isCopied = true
                             resetTimer.restart()
                         }
-                        if (!plasmoid.configuration.isPinned) {
-                            root.expanded = false
+                        if (plasmoid.formFactor === 2 || plasmoid.formFactor === 3) {
+                            if (!plasmoid.configuration.isPinned) {
+                                root.expanded = false
+                            } else if (plasmoid.configuration.clearSearchOnCopy) {
+                                searchField.clear()
+                                root.searchQuery = ""
+                            }
+                        } else if (plasmoid.configuration.clearSearchOnCopy) {
+                            searchField.clear()
+                            root.searchQuery = ""
                         }
                     }
                 }
@@ -201,8 +215,10 @@ PlasmoidItem {
                 if (!root.expanded && !plasmoid.configuration.isPinned) {
                     snippetList.currentIndex = -1
                     snippetList.positionViewAtBeginning()
-                    searchField.clear()
-                    root.searchQuery = ""
+                    if (plasmoid.configuration.clearSearchOnCopy) {
+                        searchField.clear()
+                        root.searchQuery = ""
+                    }
                 }
             }
         }
@@ -221,6 +237,7 @@ PlasmoidItem {
                     text: i18np("%1 snippet", "%1 snippets", snippetModel.count)
                     opacity: 0.6
                 }
+
                 Item { Layout.fillWidth: true }
 
                 Label {

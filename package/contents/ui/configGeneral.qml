@@ -18,6 +18,7 @@ SimpleKCM {
     property alias cfg_showOnlyTitles: showOnlyTitles.checked
     property alias cfg_maxSnippets: maxSnippetsSpinner.value
     property alias cfg_useKbdNavigation: useKbdNavigation.checked
+    property alias cfg_clearSearchOnCopy: clearSearchOnCopy.checked
 
     readonly property bool isPanel: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
 
@@ -51,6 +52,7 @@ SimpleKCM {
 
             ColumnLayout {
                 Layout.leftMargin: Kirigami.Units.largeSpacing
+                visible: isPanel
 
                 CheckBox {
                     id: useSymbolicIcon
@@ -174,6 +176,7 @@ SimpleKCM {
 
             ColumnLayout {
                 Layout.leftMargin: Kirigami.Units.largeSpacing
+                visible: isPanel
 
                 CheckBox {
                     id: useKbdNavigation
@@ -188,6 +191,22 @@ SimpleKCM {
                     opacity: 0.7
                     leftPadding: useKbdNavigation.indicator.width + useKbdNavigation.spacing
                     visible: isPanel
+                }
+            }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+
+                CheckBox {
+                    id: clearSearchOnCopy
+                    text: i18n("Clear search on copy")
+                }
+
+                Label {
+                    text: i18n("Clear the search field after a snippet is copied")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.7
+                    leftPadding: clearSearchOnCopy.indicator.width + clearSearchOnCopy.spacing
                 }
             }
         }
