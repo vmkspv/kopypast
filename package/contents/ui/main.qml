@@ -252,7 +252,7 @@ PlasmoidItem {
                     color: Kirigami.Theme.textColor
 
                     Behavior on opacity {
-                        NumberAnimation { duration: 200 }
+                        NumberAnimation { duration: Kirigami.Units.shortDuration }
                     }
                 }
 

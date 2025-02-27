@@ -27,11 +27,6 @@ SimpleKCM {
         onConfigValueChanged: cfg_snippets = configValue
     }
 
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-    Layout.preferredWidth: Kirigami.Units.gridUnit * 20
-    Layout.preferredHeight: Kirigami.Units.gridUnit * 20
-
     ColumnLayout {
         anchors.fill: parent
 
@@ -162,6 +157,7 @@ SimpleKCM {
                 ToolTip.visible: !enabled && hovered
                 ToolTip.delay: Kirigami.Units.toolTipDelay
             }
+
             Item { Layout.fillWidth: true }
 
             Button {

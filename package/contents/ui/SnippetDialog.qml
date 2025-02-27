@@ -95,75 +95,71 @@ Dialog {
 
             MouseArea {
                 anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: varsDialog.open()
+                hoverEnabled: true
+                cursorShape: Qt.WhatsThisCursor
+                onEntered: toolTip.visible = true
+                onExited: toolTip.visible = false
             }
-        }
-    }
 
-    Dialog {
-        id: varsDialog
-        parent: dialog
+            ToolTip {
+                id: toolTip
+                delay: Kirigami.Units.toolTipDelay
+                timeout: -1
 
-        x: Math.round((parent.width - width) / 2)
-        y: Math.round((parent.height - height) / 2)
+                contentItem: GridLayout {
+                    columns: 2
+                    columnSpacing: Kirigami.Units.largeSpacing
+                    rowSpacing: Kirigami.Units.smallSpacing
 
-        title: i18n("Available Variables")
-        modal: true
-        standardButtons: Dialog.Close
+                    Label { text: "{DATE}"; font.family: "monospace" }
+                    Label { text: i18n("current date in local format"); opacity: 0.7 }
 
-        contentItem: GridLayout {
-            columns: 2
-            columnSpacing: Kirigami.Units.gridUnit
-            rowSpacing: Kirigami.Units.smallSpacing
+                    Label { text: "{TIME}"; font.family: "monospace" }
+                    Label { text: i18n("current time in local format"); opacity: 0.7 }
 
-            Label { text: "{DATE}"; font.family: "monospace" }
-            Label { text: i18n("current date in local format"); opacity: 0.7 }
+                    Label { text: "{DATETIME}"; font.family: "monospace" }
+                    Label { text: i18n("current date and time"); opacity: 0.7 }
 
-            Label { text: "{TIME}"; font.family: "monospace" }
-            Label { text: i18n("current time in local format"); opacity: 0.7 }
+                    Label { text: "{ISO_DATE}"; font.family: "monospace" }
+                    Label { text: i18n("date in YYYY-MM-DD format"); opacity: 0.7 }
 
-            Label { text: "{DATETIME}"; font.family: "monospace" }
-            Label { text: i18n("current date and time"); opacity: 0.7 }
+                    Label { text: "{ISO_TIME}"; font.family: "monospace" }
+                    Label { text: i18n("time in HH:mm:ss format"); opacity: 0.7 }
 
-            Label { text: "{ISO_DATE}"; font.family: "monospace" }
-            Label { text: i18n("date in YYYY-MM-DD format"); opacity: 0.7 }
+                    Label { text: "{ISO_DATETIME}"; font.family: "monospace" }
+                    Label { text: i18n("full ISO date and time"); opacity: 0.7 }
 
-            Label { text: "{ISO_TIME}"; font.family: "monospace" }
-            Label { text: i18n("time in HH:mm:ss format"); opacity: 0.7 }
+                    Label { text: "{YEAR}"; font.family: "monospace" }
+                    Label { text: i18n("current year (4 digits)"); opacity: 0.7 }
 
-            Label { text: "{ISO_DATETIME}"; font.family: "monospace" }
-            Label { text: i18n("full ISO date and time"); opacity: 0.7 }
+                    Label { text: "{MONTH}"; font.family: "monospace" }
+                    Label { text: i18n("current month (01-12)"); opacity: 0.7 }
 
-            Label { text: "{YEAR}"; font.family: "monospace" }
-            Label { text: i18n("current year (4 digits)"); opacity: 0.7 }
+                    Label { text: "{MONTH_NAME}"; font.family: "monospace" }
+                    Label { text: i18n("full month name"); opacity: 0.7 }
 
-            Label { text: "{MONTH}"; font.family: "monospace" }
-            Label { text: i18n("current month (01-12)"); opacity: 0.7 }
+                    Label { text: "{MONTH_NAME_SHORT}"; font.family: "monospace" }
+                    Label { text: i18n("short month name"); opacity: 0.7 }
 
-            Label { text: "{MONTH_NAME}"; font.family: "monospace" }
-            Label { text: i18n("full month name"); opacity: 0.7 }
+                    Label { text: "{DAY}"; font.family: "monospace" }
+                    Label { text: i18n("current day (01-31)"); opacity: 0.7 }
 
-            Label { text: "{MONTH_NAME_SHORT}"; font.family: "monospace" }
-            Label { text: i18n("short month name"); opacity: 0.7 }
+                    Label { text: "{WEEKDAY}"; font.family: "monospace" }
+                    Label { text: i18n("current day of week"); opacity: 0.7 }
 
-            Label { text: "{DAY}"; font.family: "monospace" }
-            Label { text: i18n("current day (01-31)"); opacity: 0.7 }
+                    Label { text: "{WEEKDAY_SHORT}"; font.family: "monospace" }
+                    Label { text: i18n("short day of week"); opacity: 0.7 }
 
-            Label { text: "{WEEKDAY}"; font.family: "monospace" }
-            Label { text: i18n("current day of week"); opacity: 0.7 }
+                    Label { text: "{HOUR}"; font.family: "monospace" }
+                    Label { text: i18n("current hour (00-23)"); opacity: 0.7 }
 
-            Label { text: "{WEEKDAY_SHORT}"; font.family: "monospace" }
-            Label { text: i18n("short day of week"); opacity: 0.7 }
+                    Label { text: "{MINUTE}"; font.family: "monospace" }
+                    Label { text: i18n("current minute (00-59)"); opacity: 0.7 }
 
-            Label { text: "{HOUR}"; font.family: "monospace" }
-            Label { text: i18n("current hour (00-23)"); opacity: 0.7 }
-
-            Label { text: "{MINUTE}"; font.family: "monospace" }
-            Label { text: i18n("current minute (00-59)"); opacity: 0.7 }
-
-            Label { text: "{SECOND}"; font.family: "monospace" }
-            Label { text: i18n("current second (00-59)"); opacity: 0.7 }
+                    Label { text: "{SECOND}"; font.family: "monospace" }
+                    Label { text: i18n("current second (00-59)"); opacity: 0.7 }
+                }
+            }
         }
     }
 }

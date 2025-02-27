@@ -161,10 +161,10 @@ Dialog {
             margins: Kirigami.Units.smallSpacing
         }
         property bool copied: false
-        flat: true
-        icon.name: copied ? "dialog-ok-apply" : "edit-copy"
+        icon.name: copied ? "dialog-ok" : "edit-copy"
         icon.color: copied ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
         display: ToolButton.IconOnly
+        flat: true
         ToolTip.text: i18n("Copy")
         ToolTip.visible: hovered
         ToolTip.delay: Kirigami.Units.toolTipDelay
@@ -182,7 +182,7 @@ Dialog {
         }
 
         Behavior on icon.color {
-            ColorAnimation { duration: 200 }
+            ColorAnimation { duration: Kirigami.Units.shortDuration }
         }
     }
 }
