@@ -28,6 +28,10 @@ PlasmoidItem {
         onConfigValueChanged: plasmoid.configuration.snippets = configValue
     }
 
+    Local.VariableHandler {
+        id: variableHandler
+    }
+
     Connections {
         target: plasmoid.configuration
         function onSnippetsChanged() {
@@ -113,7 +117,8 @@ PlasmoidItem {
 
                 function handleSelection() {
                     if (currentIndex >= 0) {
-                        KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(model[currentIndex].text)
+                        const processedText = variableHandler.processVariables(model[currentIndex].text)
+                        KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(processedText)
                         if (plasmoid.configuration.isPinned ||
                             !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
                             root.isCopied = true
@@ -154,7 +159,7 @@ PlasmoidItem {
                     anchors.centerIn: parent
                     visible: snippetList.count === 0 && root.searchQuery
                     width: parent.width - (Kirigami.Units.largeSpacing * 4)
-                    icon.name: "search-symbolic"
+                    icon.name: "search"
                     icon.color: Kirigami.Theme.textColor
                     text: i18n("No matching snippets")
                     explanation: i18n("Try a different search term")
@@ -187,7 +192,8 @@ PlasmoidItem {
                     }
 
                     onClicked: {
-                        KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(modelData.text)
+                        const processedText = variableHandler.processVariables(modelData.text)
+                        KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(processedText)
                         if (plasmoid.configuration.isPinned ||
                             !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
                             root.isCopied = true
