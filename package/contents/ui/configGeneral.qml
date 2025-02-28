@@ -19,6 +19,7 @@ SimpleKCM {
     property alias cfg_maxSnippets: maxSnippetsSpinner.value
     property alias cfg_useKbdNavigation: useKbdNavigation.checked
     property alias cfg_clearSearchOnCopy: clearSearchOnCopy.checked
+    property alias cfg_handleVariables: handleVariables.checked
 
     readonly property bool isPanel: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
 
@@ -207,6 +208,22 @@ SimpleKCM {
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: clearSearchOnCopy.indicator.width + clearSearchOnCopy.spacing
+                }
+            }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+
+                CheckBox {
+                    id: handleVariables
+                    text: i18n("Variable processing")
+                }
+
+                Label {
+                    text: i18n("Handle available variables in the snippet text")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.7
+                    leftPadding: handleVariables.indicator.width + handleVariables.spacing
                 }
             }
         }

@@ -35,6 +35,9 @@
         <entry name="clearSearchOnCopy" type="Bool">
             <default>true</default>
         </entry>
+        <entry name="handleVariables" type="Bool">
+            <default>true</default>
+        </entry>
         <entry name="isPinned" type="Bool">
             <default>false</default>
         </entry>

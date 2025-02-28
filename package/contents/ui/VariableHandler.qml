@@ -7,6 +7,10 @@ import QtQuick
 
 QtObject {
     function processVariables(text) {
+        if (!plasmoid.configuration.handleVariables) {
+            return text
+        }
+
         const now = new Date()
 
         const replacements = {
@@ -19,10 +23,6 @@ QtObject {
             "{YEAR}": now.getFullYear().toString(),
             "{MONTH}": (now.getMonth() + 1).toString().padStart(2, '0'),
             "{DAY}": now.getDate().toString().padStart(2, '0'),
-            "{MONTH_NAME}": Qt.formatDate(now, "MMMM"),
-            "{MONTH_NAME_SHORT}": Qt.formatDate(now, "MMM"),
-            "{WEEKDAY}": Qt.formatDate(now, "dddd"),
-            "{WEEKDAY_SHORT}": Qt.formatDate(now, "ddd"),
             "{HOUR}": now.getHours().toString().padStart(2, '0'),
             "{MINUTE}": now.getMinutes().toString().padStart(2, '0'),
             "{SECOND}": now.getSeconds().toString().padStart(2, '0')

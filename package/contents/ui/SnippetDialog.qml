@@ -92,6 +92,8 @@ Dialog {
             text: i18n("Available Variables")
             flat: true
             hoverEnabled: false
+            Layout.leftMargin: -Kirigami.Units.smallSpacing
+            visible: plasmoid.configuration.handleVariables
 
             MouseArea {
                 anchors.fill: parent
@@ -135,20 +137,8 @@ Dialog {
                     Label { text: "{MONTH}"; font.family: "monospace" }
                     Label { text: i18n("current month (01-12)"); opacity: 0.7 }
 
-                    Label { text: "{MONTH_NAME}"; font.family: "monospace" }
-                    Label { text: i18n("full month name"); opacity: 0.7 }
-
-                    Label { text: "{MONTH_NAME_SHORT}"; font.family: "monospace" }
-                    Label { text: i18n("short month name"); opacity: 0.7 }
-
                     Label { text: "{DAY}"; font.family: "monospace" }
                     Label { text: i18n("current day (01-31)"); opacity: 0.7 }
-
-                    Label { text: "{WEEKDAY}"; font.family: "monospace" }
-                    Label { text: i18n("current day of week"); opacity: 0.7 }
-
-                    Label { text: "{WEEKDAY_SHORT}"; font.family: "monospace" }
-                    Label { text: i18n("short day of week"); opacity: 0.7 }
 
                     Label { text: "{HOUR}"; font.family: "monospace" }
                     Label { text: i18n("current hour (00-23)"); opacity: 0.7 }
