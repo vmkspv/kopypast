@@ -20,6 +20,9 @@ Dialog {
     standardButtons: Dialog.Ok | Dialog.Cancel
 
     property bool isValid: titleField.text !== "" && textArea.text !== ""
+    property int editIndex: -1
+    property alias titleText: titleField.text
+    property alias snippetText: textArea.text
 
     Component.onCompleted: {
         standardButton(Dialog.Ok).enabled = isValid
@@ -29,9 +32,7 @@ Dialog {
         standardButton(Dialog.Ok).enabled = isValid
     }
 
-    property int editIndex: -1
-    property alias titleText: titleField.text
-    property alias snippetText: textArea.text
+    onOpened: titleField.forceActiveFocus()
 
     function createSnippet() {
         editIndex = -1
@@ -70,6 +71,7 @@ Dialog {
             id: titleField
             Layout.fillWidth: true
             placeholderText: i18n("Snippet Title")
+            onAccepted: textArea.forceActiveFocus()
         }
 
         ScrollView {

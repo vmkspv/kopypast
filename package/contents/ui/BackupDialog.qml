@@ -29,6 +29,7 @@ Dialog {
         if (!isBackup) {
             initializing = true
             standardButton(Dialog.Ok).enabled = false
+            textArea.forceActiveFocus()
         }
     }
 
