@@ -1,0 +1,303 @@
+# ITALIAN translations for Kopypast package.
+# Copyright (C) 2025 Vladimir Kosolapov
+# This file is distributed under the same license as the Kopypast package.
+# ALBANO BATTISTELLA <ALBANOBATTISTELLA@GMAIL.COM>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kopypast\n"
+"Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
+"POT-Creation-Date: 2025-03-20 14:00+0300\n"
+"PO-Revision-Date: 2025-03-20 13:00+0100\n"
+"Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: package/contents/config/config.qml
+msgid "Snippets"
+msgstr "Snippets"
+
+#: package/contents/config/config.qml
+msgid "General"
+msgstr "Generale"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Snippets"
+msgstr "Backup di Snippets"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restore Snippets"
+msgstr "Ripristina Snippets"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup contains no snippets"
+msgstr "Il backup non contiene snippet"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid snippet format"
+msgstr "Formato dello snippet non valido"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "All snippets are duplicates"
+msgstr "Tutti gli snippet sono duplicati"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Cannot restore snippets: maximum limit (%1) reached"
+msgstr "Impossibile ripristinare gli snippet: raggiunto il limite massimo (%1)"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Only restored %1 snippet due to maximum limit"
+msgid_plural "Only restored %1 snippets due to maximum limit"
+msgstr[0] "Ripristinato solo lo snippet %1 a causa del limite massimo"
+msgstr[1] "Ripristinati solo gli snippets %1 a causa del limite massimo"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restored %1 snippet, skipped %2 duplicate(s)"
+msgid_plural "Restored %1 snippets, skipped %2 duplicate(s)"
+msgstr[0] "Ripristinato %1 snippet, saltati %2 duplicato(i)"
+msgstr[1] "Ripristinati %1 snippets, saltati %2 duplicato(i)"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Successfully restored %1 snippet"
+msgid_plural "Successfully restored %1 snippets"
+msgstr[0] "Snippet %1 ripristinato correttamente"
+msgstr[1] "Snippets %1 ripristinato correttamente"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid backup format"
+msgstr "Formato di backup non valido"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy and save the contents below to back up your snippets:"
+msgstr "Copia e salva i contenuti seguenti per eseguire il backup dei tuoi snippet:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Paste the backup contents below to restore your snippets:"
+msgstr "Incolla i contenuti del backup di seguito per ripristinare i tuoi snippet:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Contents"
+msgstr "Contenuto di backup"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy"
+msgstr "Copia"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure how the widget looks"
+msgstr "Configura l'aspetto del widget"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Monochrome icon"
+msgstr "Icona monocromatica"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use a monochrome icon that matches the color scheme"
+msgstr "Utilizzare un'icona monocromatica che corrisponda allo schema dei colori"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enable search bar"
+msgstr "Abilita barra di ricerca"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show a search field at the top of the widget"
+msgstr "Mostra un campo di ricerca nella parte superiore del widget"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show bottom toolbar"
+msgstr "Mostra barra degli strumenti in basso"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Place a toolbar with counter and buttons at the bottom"
+msgstr "Posiziona una barra degli strumenti con contatore e pulsanti in basso"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Hide snippet previews"
+msgstr "Nascondi anteprime snippet"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show only snippet titles without content previews"
+msgstr "Mostra solo i titoli degli snippet senza anteprime dei contenuti"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Functionality"
+msgstr "Funzionalità"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure behavior and limitations"
+msgstr "Configurare comportamento e limitazioni"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Maximum number of snippets:"
+msgstr "Numero massimo di snippet:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Limit the number of snippets for optimal performance"
+msgstr "Limita il numero di snippet per prestazioni ottimali"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Keyboard navigation"
+msgstr "Navigazione tramite tastiera"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use the keyboard keys to navigate and select snippets"
+msgstr "Utilizza i tasti della tastiera per navigare e selezionare gli snippet"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Clear search on copy"
+msgstr "Cancella ricerca su copia"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Clear the search field after a snippet is copied"
+msgstr "Cancella il campo di ricerca dopo aver copiato uno snippet"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Variable processing"
+msgstr "Elaborazione variabile"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Handle available variables in the snippet text"
+msgstr "Gestire le variabili disponibili nel testo dello snippet"
+
+#: package/contents/ui/configSnippets.qml
+msgid "No snippets added"
+msgstr "Nessun snippets aggiunto"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Add your first snippet using the button below"
+msgstr "Aggiungi il tuo primo snippet utilizzando il pulsante qui sotto"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Edit"
+msgstr "Modifica"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Delete"
+msgstr "Elimina"
+
+#: package/contents/ui/configSnippets.qml
+#: package/contents/ui/SnippetDialog.qml
+msgid "Add Snippet"
+msgstr "Aggiungi Snippet"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
+msgstr "Limite massimo raggiunto"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Backup"
+msgstr "Backup"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Restore"
+msgstr "Ripristina"
+
+#: package/contents/ui/main.qml
+msgid "Search for snippets..."
+msgstr "Cerca snippet..."
+
+#: package/contents/ui/main.qml
+msgid "No snippets available"
+msgstr "Nessun snippet disponibile"
+
+#: package/contents/ui/main.qml
+msgid "Add snippets in the settings"
+msgstr "Aggiungi snippet nelle impostazioni"
+
+#: package/contents/ui/main.qml
+msgid "No matching snippets"
+msgstr ""Nessun snippet corrispondente"
+
+#: package/contents/ui/main.qml
+msgid "Try a different search term"
+msgstr "Prova un termine di ricerca diverso"
+
+#: package/contents/ui/main.qml
+msgid "%1 snippet"
+msgid_plural "%1 snippets"
+msgstr[0] "%1 snippet"
+msgstr[1] "%1 snippets"
+
+#: package/contents/ui/main.qml
+msgid "Copied!"
+msgstr "Copiato!"
+
+#: package/contents/ui/main.qml
+msgid "Configure"
+msgstr "Configura"
+
+#: package/contents/ui/main.qml
+msgid "Keep Open"
+msgstr "Tieni aperto"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Edit Snippet"
+msgstr "Modifica Snippet"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Snippet Title"
+msgstr "TItolo del Snippet"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Snippet Text"
+msgstr "Testo Snippet"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Available Variables"
+msgstr "Variabili disponibili"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current date in local format"
+msgstr "data corrente in formato locale"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current time in local format"
+msgstr "ora corrente in formato locale"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current date and time"
+msgstr "data e ora correnti"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "date in YYYY-MM-DD format"
+msgstr "data nel formato AAAA-MM-GG"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "time in HH:mm:ss format"
+msgstr "ora nel formato HH:mm:ss"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "full ISO date and time"
+msgstr "data e ora ISO complete"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current year (4 digits)"
+msgstr "anno corrente (4 cifre)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current month (01-12)"
+msgstr "mese corrente (01-12)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current day (01-31)"
+msgstr "giorno corrente (01-31)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current hour (00-23)"
+msgstr "ora corrente (00-23)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current minute (00-59)"
+msgstr "minuto corrente (00-59)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current second (00-59)"
+msgstr "secondo corrente (00-59)"
