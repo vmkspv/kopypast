@@ -1,7 +1,7 @@
-# ITALIAN translations for Kopypast package.
+# Italian translations for Kopypast package.
 # Copyright (C) 2025 Vladimir Kosolapov
 # This file is distributed under the same license as the Kopypast package.
-# ALBANO BATTISTELLA <ALBANOBATTISTELLA@GMAIL.COM>, 2025.
+# Albano Battistella <albanobattistella@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
@@ -214,7 +214,7 @@ msgstr "Aggiungi snippet nelle impostazioni"
 
 #: package/contents/ui/main.qml
 msgid "No matching snippets"
-msgstr ""Nessun snippet corrispondente"
+msgstr "Nessun snippet corrispondente"
 
 #: package/contents/ui/main.qml
 msgid "Try a different search term"

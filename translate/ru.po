@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-02-12 17:00+0300\n"
-"PO-Revision-Date: 2025-02-12 18:00+0300\n"
+"POT-Creation-Date: 2025-03-20 14:00+0300\n"
+"PO-Revision-Date: 2025-03-22 15:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -155,6 +155,22 @@ msgstr "Клавиатурная навигация"
 msgid "Use the keyboard keys to navigate and select snippets"
 msgstr "Использовать клавиши управления для навигации и выбора"
 
+#: package/contents/ui/configGeneral.qml
+msgid "Clear search on copy"
+msgstr "Очищать панель поиска"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Clear the search field after a snippet is copied"
+msgstr "При копировании сниппета панель поиска будет очищена"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Variable processing"
+msgstr "Обработка переменных"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Handle available variables in the snippet text"
+msgstr "Интерпретировать доступные переменные в сниппетах"
+
 #: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
 msgstr "Сниппеты не добавлены"
@@ -238,3 +254,55 @@ msgstr "Название"
 #: package/contents/ui/SnippetDialog.qml
 msgid "Snippet Text"
 msgstr "Содержание"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Available Variables"
+msgstr "Доступные переменные"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current date in local format"
+msgstr "текущая дата в местном формате"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current time in local format"
+msgstr "текущее время в местном формате"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current date and time"
+msgstr "текущая дата и время"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "date in YYYY-MM-DD format"
+msgstr "дата в формате ГГГГ-ММ-ДД"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "time in HH:mm:ss format"
+msgstr "время в формате чч:мм:сс"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "full ISO date and time"
+msgstr "полная дата и время по ISO"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current year (4 digits)"
+msgstr "текущий год (4 цифры)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current month (01-12)"
+msgstr "текущий месяц (01-12)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current day (01-31)"
+msgstr "текущий день (01-31)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current hour (00-23)"
+msgstr "текущий час (00-23)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current minute (00-59)"
+msgstr "текущая минута (00-59)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current second (00-59)"
+msgstr "текущая секунда (00-59)"
