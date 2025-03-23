@@ -1,4 +1,5 @@
 {
+    "KPackageStructure": "Plasma/Applet",
     "KPlugin": {
         "Authors": [
             {
@@ -6,22 +7,22 @@
                 "Website": "https://github.com/vmkspv"
             }
         ],
-        "Name": "Kopypast",
+        "BugReportUrl": "https://github.com/vmkspv/kopypast/issues",
+        "Category": "Utilities",
         "Description": "Quick interaction with text snippets",
+        "Description[it]": "Interazione rapida con gli snippet di testo",
         "Description[ru]": "Быстрое взаимодействие с текстовыми сниппетами",
         "Description[uk]": "Швидка взаємодія з текстовими сніпетами",
-        "Category": "Utilities",
-        "Id": "io.github.vmkspv.kopypast",
-        "Icon": "text-flow-into-frame",
-        "Version": "1.0.2",
-        "License": "GPL-3.0",
-        "BugReportUrl": "https://github.com/vmkspv/kopypast/issues",
-        "Website": "https://github.com/vmkspv/kopypast",
         "FormFactors": [
             "desktop"
-        ]
+        ],
+        "Icon": "text-flow-into-frame",
+        "Id": "io.github.vmkspv.kopypast",
+        "License": "GPL-3.0",
+        "Name": "Kopypast",
+        "Version": "1.0.3",
+        "Website": "https://github.com/vmkspv/kopypast"
     },
     "X-Plasma-API": "declarativeappletscript",
-    "X-Plasma-API-Minimum-Version": "6.0",
-    "KPackageStructure": "Plasma/Applet"
+    "X-Plasma-API-Minimum-Version": "6.0"
 }
