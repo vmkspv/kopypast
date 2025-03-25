@@ -1,0 +1,304 @@
+# LANGUAGE translations for Kopypast package.
+# Copyright (C) 2025 Vladimir Kosolapov
+# This file is distributed under the same license as the Kopypast package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: kopypast\n"
+"Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
+"POT-Creation-Date: 2025-03-20 14:00+0300\n"
+"PO-Revision-Date: 2025-03-25 11:19+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#: package/contents/config/config.qml
+msgid "Snippets"
+msgstr "Knipsels"
+
+#: package/contents/config/config.qml
+msgid "General"
+msgstr "Algemeen"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Snippets"
+msgstr "Reservekopie maken"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restore Snippets"
+msgstr "Reservekopie herstellen"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup contains no snippets"
+msgstr "De reservekopie bevat geen knipsels"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid snippet format"
+msgstr "Ongeldig knipselformaat"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "All snippets are duplicates"
+msgstr "Alle knipsels zijn duplicaten"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Cannot restore snippets: maximum limit (%1) reached"
+msgstr "De knipsels kunnen niet worden hersteld: het maximumaantal (%1) is bereikt"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Only restored %1 snippet due to maximum limit"
+msgid_plural "Only restored %1 snippets due to maximum limit"
+msgstr[0] "Vanwege het maximumaantal is slechts %1 knipsel hersteld"
+msgstr[1] "Vanwege het maximumaantal zijn slechts %1 knipsels hersteld"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Restored %1 snippet, skipped %2 duplicate(s)"
+msgid_plural "Restored %1 snippets, skipped %2 duplicate(s)"
+msgstr[0] "%1 knipsel hersteld; %2 duplicaten overgeslagen"
+msgstr[1] "%1 knipsels hersteld; %2 duplicaten overgeslagen"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Successfully restored %1 snippet"
+msgid_plural "Successfully restored %1 snippets"
+msgstr[0] "Er is %1 knipsel hersteld"
+msgstr[1] "Er zijn %1 knipsels hersteld"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Invalid backup format"
+msgstr "Ongeldig reservekopieformaat"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy and save the contents below to back up your snippets:"
+msgstr "Kopieer onderstaande inhoud en bewaar die in een bestand:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Paste the backup contents below to restore your snippets:"
+msgstr "Plak de inhoud van de reservekopie om je knipsels te herstellen:"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Backup Contents"
+msgstr "Reservekopie maken"
+
+#: package/contents/ui/BackupDialog.qml
+msgid "Copy"
+msgstr "Kopiëren"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Appearance"
+msgstr "Vormgeving"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure how the widget looks"
+msgstr "Zet de widget naar eigen hand"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Monochrome icon"
+msgstr "Monochroom pictogram"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use a monochrome icon that matches the color scheme"
+msgstr "Gebruik een monochroom pictogram dat bij het kleurenschema hoort"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enable search bar"
+msgstr "Zoekvak tonen"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show a search field at the top of the widget"
+msgstr "Toon een zoekvak bovenaan de widget"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show bottom toolbar"
+msgstr "Werkbalk tonen"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Place a toolbar with counter and buttons at the bottom"
+msgstr "Toon een werkbalk met teller en knoppen onderaan de widget"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Hide snippet previews"
+msgstr "Voorvertoningen verbergen"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Show only snippet titles without content previews"
+msgstr "Toon alleen de titels van knipsels, zonder voorvertoning van de inhoud"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Functionality"
+msgstr "Functionaliteit"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Configure behavior and limitations"
+msgstr "Stel het gedrag en de beperkingen in"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Maximum number of snippets:"
+msgstr "Maximumaantal knipsels:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Limit the number of snippets for optimal performance"
+msgstr "Tip: beperk het aantal om de prestaties te verbeteren"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Keyboard navigation"
+msgstr "Toetsenbordnavigatie"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Use the keyboard keys to navigate and select snippets"
+msgstr "Gebruik je toetsenbord om door knipsels te navigeren en knipsels uit te kiezen"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Clear search on copy"
+msgstr "Zoekvak wissen na kopiëren"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Clear the search field after a snippet is copied"
+msgstr "Wis het zoekvak nadat je een knipsel hebt gekopieerd"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Variable processing"
+msgstr "Variabelen verwerken"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Handle available variables in the snippet text"
+msgstr "Behandel variabelen in de knipseltekst"
+
+#: package/contents/ui/configSnippets.qml
+msgid "No snippets added"
+msgstr "Er zijn nog geen knipsels"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Add your first snippet using the button below"
+msgstr "Voeg een knipsel toe door op onderstaande knop te drukken"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Edit"
+msgstr "Bewerken"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Delete"
+msgstr "Verwĳderen"
+
+#: package/contents/ui/configSnippets.qml package/contents/ui/SnippetDialog.qml
+msgid "Add Snippet"
+msgstr "Knipsel toevoegen"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
+msgstr "Maximumaantal bereikt"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Backup"
+msgstr "Reservekopie maken"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Restore"
+msgstr "Herstellen"
+
+#: package/contents/ui/main.qml
+msgid "Search for snippets..."
+msgstr "Zoeken naar knipsels…"
+
+#: package/contents/ui/main.qml
+msgid "No snippets available"
+msgstr "Er zijn geen knipsels"
+
+#: package/contents/ui/main.qml
+msgid "Add snippets in the settings"
+msgstr "Voeg knipsels toe in de instellingen"
+
+#: package/contents/ui/main.qml
+msgid "No matching snippets"
+msgstr "Er zijn geen zoekresultaten"
+
+#: package/contents/ui/main.qml
+msgid "Try a different search term"
+msgstr "Probeer een andere zoekopdracht"
+
+#: package/contents/ui/main.qml
+msgid "%1 snippet"
+msgid_plural "%1 snippets"
+msgstr[0] "%1 knipsel"
+msgstr[1] "%1 knipsels"
+
+#: package/contents/ui/main.qml
+msgid "Copied!"
+msgstr "Gekopieerd!"
+
+#: package/contents/ui/main.qml
+msgid "Configure"
+msgstr "Instellen"
+
+#: package/contents/ui/main.qml
+msgid "Keep Open"
+msgstr "Altijd bovenaan"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Edit Snippet"
+msgstr "Knipsel bewerken"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Snippet Title"
+msgstr "Knipseltitel"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Snippet Text"
+msgstr "Knipseltekst"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "Available Variables"
+msgstr "Beschikbare variabelen"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current date in local format"
+msgstr "huidige datum in lokale opmaak"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current time in local format"
+msgstr "huidig tijdstip in lokale opmaak"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current date and time"
+msgstr "huidige datum en tijd"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "date in YYYY-MM-DD format"
+msgstr "datum in JJJJ-MM-DD-opmaak"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "time in HH:mm:ss format"
+msgstr "tijd in UU:mm:ss-opmaak"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "full ISO date and time"
+msgstr "volledige datum en tijd (ISO)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current year (4 digits)"
+msgstr "huidig jaartal (4 cijfers)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current month (01-12)"
+msgstr "huidige maand (01-12)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current day (01-31)"
+msgstr "huidige dag (01-31)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current hour (00-23)"
+msgstr "huidig uur (00-23)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current minute (00-59)"
+msgstr "huidige minuten (00-59)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "current second (00-59)"
+msgstr "huidige seconden (00-59)"
