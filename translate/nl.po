@@ -1,9 +1,8 @@
-# LANGUAGE translations for Kopypast package.
+# Dutch translations for Kopypast package.
 # Copyright (C) 2025 Vladimir Kosolapov
 # This file is distributed under the same license as the Kopypast package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Heimen Stoffels <vistausss@fastmail.com>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
@@ -185,7 +184,8 @@ msgstr "Bewerken"
 msgid "Delete"
 msgstr "Verwĳderen"
 
-#: package/contents/ui/configSnippets.qml package/contents/ui/SnippetDialog.qml
+#: package/contents/ui/configSnippets.qml
+#: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Knipsel toevoegen"
 
