@@ -87,6 +87,27 @@ Dialog {
                 wrapMode: TextEdit.Wrap
                 textFormat: TextEdit.PlainText
             }
+
+            ToolButton {
+                visible: textArea.text.length === 0
+                parent: textArea
+                anchors {
+                    top: parent.top
+                    right: parent.right
+                    margins: Kirigami.Units.smallSpacing
+                }
+                icon.name: "edit-paste"
+                icon.color: Kirigami.Theme.textColor
+                display: ToolButton.IconOnly
+                flat: true
+                ToolTip.text: i18n("Paste")
+                ToolTip.visible: hovered
+                ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                onClicked: {
+                    textArea.paste()
+                }
+            }
         }
 
         Button {
