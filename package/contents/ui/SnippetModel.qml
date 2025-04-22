@@ -30,26 +30,26 @@ Item {
     }
 
     function append(item) {
-        const snippetsArray = [...snippets]
+        const snippetsArray = snippets.slice()
         snippetsArray.push(item)
         updateModel(snippetsArray)
     }
 
     function set(index, item) {
-        const snippetsArray = [...snippets]
+        const snippetsArray = snippets.slice()
         snippetsArray[index] = item
         updateModel(snippetsArray)
     }
 
     function remove(index) {
-        const snippetsArray = [...snippets]
+        const snippetsArray = snippets.slice()
         snippetsArray.splice(index, 1)
         updateModel(snippetsArray)
     }
 
     function move(from, to) {
         if (from === to) return
-        const snippetsArray = [...snippets]
+        const snippetsArray = snippets.slice()
         snippetsArray.splice(to, 0, snippetsArray.splice(from, 1)[0])
         updateModel(snippetsArray)
     }
