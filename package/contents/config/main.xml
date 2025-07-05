@@ -26,6 +26,9 @@
         <entry name="showOnlyTitles" type="Bool">
             <default>false</default>
         </entry>
+        <entry name="defaultTemplate" type="String">
+            <default></default>
+        </entry>
         <entry name="maxSnippets" type="Int">
             <default>50</default>
         </entry>

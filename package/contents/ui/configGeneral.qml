@@ -16,6 +16,7 @@ SimpleKCM {
     property alias cfg_showSearchField: showSearchField.checked
     property alias cfg_showToolbarPanel: showToolbarPanel.checked
     property alias cfg_showOnlyTitles: showOnlyTitles.checked
+    property alias cfg_defaultTemplate: defaultTemplate.text
     property alias cfg_maxSnippets: maxSnippetsSpinner.value
     property alias cfg_useKbdNavigation: useKbdNavigation.checked
     property alias cfg_clearSearchOnCopy: clearSearchOnCopy.checked
@@ -141,6 +142,37 @@ SimpleKCM {
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     Layout.leftMargin: Kirigami.Units.largeSpacing
+                }
+            }
+
+            Item { implicitHeight: Kirigami.Units.smallSpacing }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+
+                Label {
+                    text: i18n("Default snippet template:")
+                    Layout.alignment: Qt.AlignTop
+                }
+
+                ScrollView {
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: Kirigami.Units.gridUnit * 4
+                    Layout.maximumHeight: Kirigami.Units.gridUnit * 6
+
+                    TextArea {
+                        id: defaultTemplate
+                        placeholderText: i18n("Enter text for new snippets (optional)")
+                        wrapMode: TextEdit.Wrap
+                        textFormat: TextEdit.PlainText
+                        background: null
+                    }
+                }
+
+                Label {
+                    text: i18n("This text will be pre-filled when creating new snippets")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.7
                 }
             }
 

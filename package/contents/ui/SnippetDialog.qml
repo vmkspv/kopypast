@@ -37,7 +37,7 @@ Dialog {
     function createSnippet() {
         editIndex = -1
         titleText = ""
-        snippetText = ""
+        snippetText = plasmoid.configuration.defaultTemplate || ""
         open()
     }
 
