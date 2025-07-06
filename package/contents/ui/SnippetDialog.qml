@@ -43,7 +43,7 @@ Dialog {
 
     function editSnippet(index) {
         editIndex = index
-        let item = snippetModel.get(index)
+        var item = snippetModel.get(index)
         titleText = item.title
         snippetText = item.text
         open()
@@ -53,12 +53,14 @@ Dialog {
         if (editIndex === -1) {
             snippetModel.append({
                 title: titleText,
-                text: snippetText
+                text: snippetText,
+                usageCount: 0
             })
         } else {
             snippetModel.set(editIndex, {
                 title: titleText,
-                text: snippetText
+                text: snippetText,
+                usageCount: snippetModel.get(editIndex).usageCount || 0
             })
         }
     }

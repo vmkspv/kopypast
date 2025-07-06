@@ -11,9 +11,9 @@ QtObject {
             return text
         }
 
-        const now = new Date()
+        var now = new Date()
 
-        const replacements = {
+        var replacements = {
             "{DATE}": Qt.formatDate(now, Qt.LocaleDate),
             "{TIME}": Qt.formatTime(now, Qt.LocaleTime),
             "{DATETIME}": Qt.formatDateTime(now, Qt.DefaultLocaleShortDate),
@@ -28,9 +28,12 @@ QtObject {
             "{SECOND}": now.getSeconds().toString().padStart(2, '0')
         }
 
-        let result = text
-        for (const [key, value] of Object.entries(replacements)) {
-            result = result.replace(new RegExp(key, 'g'), value)
+        var result = text
+        for (var key in replacements) {
+            if (replacements.hasOwnProperty(key)) {
+                var value = replacements[key]
+                result = result.replace(new RegExp(key, 'g'), value)
+            }
         }
         return result
     }

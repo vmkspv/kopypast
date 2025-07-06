@@ -50,26 +50,29 @@ Dialog {
     onAccepted: {
         if (!isBackup) {
             try {
-                let data = JSON.parse(textArea.text)
+                var data = JSON.parse(textArea.text)
                 if (Array.isArray(data)) {
                     if (data.length === 0) {
                         applicationWindow().showPassiveNotification(i18n("Backup contains no snippets"), 3000)
                         return
                     }
 
-                    for (const snippet of data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var snippet = data[i]
                         if (!snippet.title || !snippet.text) {
                             applicationWindow().showPassiveNotification(i18n("Invalid snippet format"), 3000)
                             return
                         }
                     }
 
-                    const validSnippets = []
-                    const duplicates = []
+                    var validSnippets = []
+                    var duplicates = []
 
-                    for (const snippet of data) {
-                        let isDuplicate = false
-                        for (const existing of snippetModel.snippets) {
+                    for (var i = 0; i < data.length; i++) {
+                        var snippet = data[i]
+                        var isDuplicate = false
+                        for (var j = 0; j < snippetModel.snippets.length; j++) {
+                            var existing = snippetModel.snippets[j]
                             if (existing.title === snippet.title && existing.text === snippet.text) {
                                 duplicates.push(snippet.title)
                                 isDuplicate = true
@@ -87,7 +90,7 @@ Dialog {
                     }
 
                     if (validSnippets.length + snippetModel.snippets.length > plasmoid.configuration.maxSnippets) {
-                        const remaining = plasmoid.configuration.maxSnippets - snippetModel.snippets.length
+                        var remaining = plasmoid.configuration.maxSnippets - snippetModel.snippets.length
                         if (remaining <= 0) {
                             applicationWindow().showPassiveNotification(
                                 i18n("Cannot restore snippets: maximum limit (%1) reached",
@@ -111,7 +114,7 @@ Dialog {
                                  validSnippets.length), 3000)
                     }
 
-                    const updatedSnippets = [...snippetModel.snippets, ...validSnippets]
+                    var updatedSnippets = snippetModel.snippets.slice().concat(validSnippets)
                     snippetModel.snippets = updatedSnippets
                     snippetModel.configValue = JSON.stringify(updatedSnippets)
                 } else {

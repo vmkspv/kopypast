@@ -37,6 +37,11 @@ PlasmoidItem {
         function onSnippetsChanged() {
             snippetModel.loadFromConfig(plasmoid.configuration.snippets)
         }
+        function onSortByUsageChanged() {
+            if (!plasmoid.configuration.sortByUsage) {
+                snippetModel.resetUsageCount()
+            }
+        }
     }
 
     Timer {
@@ -102,12 +107,30 @@ PlasmoidItem {
 
             ListView {
                 id: snippetList
-                property var filteredModel: root.searchQuery
-                    ? snippetModel.snippets.filter(snippet =>
-                        snippet.title.toLowerCase().includes(root.searchQuery.toLowerCase()) ||
-                        snippet.text.toLowerCase().includes(root.searchQuery.toLowerCase())
-                      )
-                    : snippetModel.snippets
+                property var filteredModel: {
+                    var sortedSnippets = snippetModel.getSortedSnippets(plasmoid.configuration.sortByUsage)
+                    return root.searchQuery
+                        ? sortedSnippets.filter(function(snippet) {
+                            return snippet.title.toLowerCase().includes(root.searchQuery.toLowerCase()) ||
+                                   snippet.text.toLowerCase().includes(root.searchQuery.toLowerCase())
+                          })
+                        : sortedSnippets
+                }
+
+                Connections {
+                    target: plasmoid.configuration
+                    function onSortByUsageChanged() {
+                        snippetList.filteredModel = Qt.binding(function() {
+                            var sortedSnippets = snippetModel.getSortedSnippets(plasmoid.configuration.sortByUsage)
+                            return root.searchQuery
+                                ? sortedSnippets.filter(function(snippet) {
+                                    return snippet.title.toLowerCase().includes(root.searchQuery.toLowerCase()) ||
+                                           snippet.text.toLowerCase().includes(root.searchQuery.toLowerCase())
+                                  })
+                                : sortedSnippets
+                        })
+                    }
+                }
 
                 model: filteredModel
                 clip: true
@@ -117,8 +140,10 @@ PlasmoidItem {
 
                 function handleSelection() {
                     if (currentIndex >= 0) {
-                        const processedText = variableHandler.processVariables(model[currentIndex].text)
+                        var snippet = model[currentIndex]
+                        var processedText = variableHandler.processVariables(snippet.text)
                         KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(processedText)
+
                         if (plasmoid.configuration.isPinned ||
                             !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
                             root.isCopied = true
@@ -134,6 +159,15 @@ PlasmoidItem {
                         } else if (plasmoid.configuration.clearSearchOnCopy) {
                             searchField.clear()
                             root.searchQuery = ""
+                        }
+
+                        if (plasmoid.configuration.sortByUsage) {
+                            var originalIndex = snippetModel.snippets.findIndex(function(s) {
+                                return s.title === snippet.title && s.text === snippet.text
+                            })
+                            if (originalIndex >= 0) {
+                                snippetModel.incrementUsage(originalIndex)
+                            }
                         }
                     }
                 }
@@ -192,8 +226,10 @@ PlasmoidItem {
                     }
 
                     onClicked: {
-                        const processedText = variableHandler.processVariables(modelData.text)
+                        var snippet = modelData
+                        var processedText = variableHandler.processVariables(snippet.text)
                         KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(processedText)
+
                         if (plasmoid.configuration.isPinned ||
                             !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
                             root.isCopied = true
@@ -209,6 +245,15 @@ PlasmoidItem {
                         } else if (plasmoid.configuration.clearSearchOnCopy) {
                             searchField.clear()
                             root.searchQuery = ""
+                        }
+
+                        if (plasmoid.configuration.sortByUsage) {
+                            var originalIndex = snippetModel.snippets.findIndex(function(s) {
+                                return s.title === snippet.title && s.text === snippet.text
+                            })
+                            if (originalIndex >= 0) {
+                                snippetModel.incrementUsage(originalIndex)
+                            }
                         }
                     }
                 }
