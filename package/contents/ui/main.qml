@@ -161,12 +161,14 @@ PlasmoidItem {
                             root.searchQuery = ""
                         }
 
-                        if (plasmoid.configuration.sortByUsage) {
-                            var originalIndex = snippetModel.snippets.findIndex(function(s) {
-                                return s.title === snippet.title && s.text === snippet.text
-                            })
-                            if (originalIndex >= 0) {
+                        var originalIndex = snippetModel.snippets.findIndex(function(s) {
+                            return s.title === snippet.title && s.text === snippet.text
+                        })
+                        if (originalIndex >= 0) {
+                            if (plasmoid.configuration.sortByUsage) {
                                 snippetModel.incrementUsage(originalIndex)
+                            } else {
+                                snippetModel.markAsUsed(originalIndex)
                             }
                         }
                     }
@@ -204,24 +206,47 @@ PlasmoidItem {
                     width: ListView.view.width
                     highlighted: plasmoid.configuration.useKbdNavigation && ListView.isCurrentItem
 
-                    contentItem: ColumnLayout {
+                    contentItem: RowLayout {
                         Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
 
-                        Label {
+                        ColumnLayout {
                             Layout.fillWidth: true
-                            text: modelData.title
-                            elide: Text.ElideRight
-                            maximumLineCount: 1
+
+                            Label {
+                                Layout.fillWidth: true
+                                text: modelData.title
+                                elide: Text.ElideRight
+                                maximumLineCount: 1
+                            }
+
+                            Label {
+                                Layout.fillWidth: true
+                                text: modelData.text
+                                elide: Text.ElideRight
+                                maximumLineCount: 1
+                                opacity: 0.7
+                                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                                visible: !plasmoid.configuration.showOnlyTitles
+                            }
                         }
 
-                        Label {
-                            Layout.fillWidth: true
-                            text: modelData.text
-                            elide: Text.ElideRight
-                            maximumLineCount: 1
-                            opacity: 0.7
-                            font.pointSize: Kirigami.Theme.smallFont.pointSize
-                            visible: !plasmoid.configuration.showOnlyTitles
+                        Rectangle {
+                            Layout.alignment: Qt.AlignVCenter
+                            Layout.rightMargin: Kirigami.Units.smallSpacing
+                            implicitWidth: badgeLabel.implicitWidth + Kirigami.Units.cornerRadius * 2
+                            implicitHeight: Math.round(Kirigami.Units.iconSizes.sizeForLabels * 1.3)
+                            radius: Kirigami.Units.cornerRadius
+                            color: Kirigami.Theme.positiveTextColor
+                            visible: plasmoid.configuration.showNewBadges && modelData.isNew
+
+                            Label {
+                                id: badgeLabel
+                                anchors.centerIn: parent
+                                text: i18n("New!")
+                                font.bold: true
+                                font.pixelSize: Kirigami.Theme.smallFont.pixelSize
+                            }
                         }
                     }
 
@@ -247,12 +272,14 @@ PlasmoidItem {
                             root.searchQuery = ""
                         }
 
-                        if (plasmoid.configuration.sortByUsage) {
-                            var originalIndex = snippetModel.snippets.findIndex(function(s) {
-                                return s.title === snippet.title && s.text === snippet.text
-                            })
-                            if (originalIndex >= 0) {
+                        var originalIndex = snippetModel.snippets.findIndex(function(s) {
+                            return s.title === snippet.title && s.text === snippet.text
+                        })
+                        if (originalIndex >= 0) {
+                            if (plasmoid.configuration.sortByUsage) {
                                 snippetModel.incrementUsage(originalIndex)
+                            } else {
+                                snippetModel.markAsUsed(originalIndex)
                             }
                         }
                     }
