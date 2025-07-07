@@ -19,7 +19,8 @@ Item {
                 return {
                     title: snippet.title,
                     text: snippet.text,
-                    usageCount: snippet.usageCount || 0
+                    usageCount: snippet.usageCount || 0,
+                    isNew: snippet.isNew !== undefined ? snippet.isNew : false
                 }
             })
         } catch (e) {
@@ -38,6 +39,7 @@ Item {
 
     function append(item) {
         var snippetsArray = snippets.slice()
+        item.isNew = true
         snippetsArray.push(item)
         updateModel(snippetsArray)
     }
@@ -65,6 +67,17 @@ Item {
         var snippetsArray = snippets.slice()
         if (snippetsArray[index]) {
             snippetsArray[index].usageCount = (snippetsArray[index].usageCount || 0) + 1
+            if (snippetsArray[index].isNew) {
+                snippetsArray[index].isNew = false
+            }
+            updateModel(snippetsArray)
+        }
+    }
+
+    function markAsUsed(index) {
+        var snippetsArray = snippets.slice()
+        if (snippetsArray[index] && snippetsArray[index].isNew) {
+            snippetsArray[index].isNew = false
             updateModel(snippetsArray)
         }
     }

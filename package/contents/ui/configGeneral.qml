@@ -16,6 +16,7 @@ SimpleKCM {
     property alias cfg_showSearchField: showSearchField.checked
     property alias cfg_showToolbarPanel: showToolbarPanel.checked
     property alias cfg_showOnlyTitles: showOnlyTitles.checked
+    property alias cfg_showNewBadges: showNewBadges.checked
     property alias cfg_defaultTemplate: defaultTemplate.text
     property alias cfg_maxSnippets: maxSnippetsSpinner.value
     property alias cfg_sortByUsage: sortByUsage.checked
@@ -118,6 +119,22 @@ SimpleKCM {
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                     leftPadding: showOnlyTitles.indicator.width + showOnlyTitles.spacing
+                }
+            }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+
+                CheckBox {
+                    id: showNewBadges
+                    text: i18n("Mark new snippets")
+                }
+
+                Label {
+                    text: i18n("Highlight newly added snippets until first use")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.7
+                    leftPadding: showNewBadges.indicator.width + showNewBadges.spacing
                 }
             }
 
