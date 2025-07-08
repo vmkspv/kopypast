@@ -25,6 +25,10 @@ Dialog {
     property bool isValid: !isBackup && textArea.text !== ""
     property bool initializing: true
 
+    function showNotification(message, timeout = 3000) {
+        applicationWindow().showPassiveNotification(message, timeout)
+    }
+
     onOpened: {
         if (!isBackup) {
             initializing = true
@@ -53,14 +57,14 @@ Dialog {
                 var data = JSON.parse(textArea.text)
                 if (Array.isArray(data)) {
                     if (data.length === 0) {
-                        applicationWindow().showPassiveNotification(i18n("Backup contains no snippets"), 3000)
+                        showNotification(i18n("Backup contains no snippets"))
                         return
                     }
 
                     for (var i = 0; i < data.length; i++) {
                         var snippet = data[i]
                         if (!snippet.title || !snippet.text) {
-                            applicationWindow().showPassiveNotification(i18n("Invalid snippet format"), 3000)
+                            showNotification(i18n("Invalid snippet format"))
                             return
                         }
                     }
@@ -85,43 +89,43 @@ Dialog {
                     }
 
                     if (validSnippets.length === 0) {
-                        applicationWindow().showPassiveNotification(i18n("All snippets are duplicates"), 3000)
+                        showNotification(i18n("All snippets are duplicates"))
                         return
                     }
 
                     if (validSnippets.length + snippetModel.snippets.length > plasmoid.configuration.maxSnippets) {
                         var remaining = plasmoid.configuration.maxSnippets - snippetModel.snippets.length
                         if (remaining <= 0) {
-                            applicationWindow().showPassiveNotification(
+                            showNotification(
                                 i18n("Cannot restore snippets: maximum limit (%1) reached",
-                                     plasmoid.configuration.maxSnippets), 3000)
+                                     plasmoid.configuration.maxSnippets))
                             return
                         }
                         validSnippets.splice(remaining)
-                        applicationWindow().showPassiveNotification(
+                        showNotification(
                             i18np("Only restored %1 snippet due to maximum limit",
                                  "Only restored %1 snippets due to maximum limit",
-                                 remaining), 3000)
+                                 remaining))
                     } else if (duplicates.length > 0) {
-                        applicationWindow().showPassiveNotification(
+                        showNotification(
                             i18np("Restored %1 snippet, skipped %2 duplicate(s)",
                                  "Restored %1 snippets, skipped %2 duplicate(s)",
-                                 validSnippets.length, duplicates.length), 3000)
+                                 validSnippets.length, duplicates.length))
                     } else {
-                        applicationWindow().showPassiveNotification(
+                        showNotification(
                             i18np("Successfully restored %1 snippet",
                                  "Successfully restored %1 snippets",
-                                 validSnippets.length), 3000)
+                                 validSnippets.length))
                     }
 
                     var updatedSnippets = snippetModel.snippets.slice().concat(validSnippets)
                     snippetModel.snippets = updatedSnippets
                     snippetModel.configValue = JSON.stringify(updatedSnippets)
                 } else {
-                    applicationWindow().showPassiveNotification(i18n("Invalid backup format"), 3000)
+                    showNotification(i18n("Invalid backup format"))
                 }
             } catch (e) {
-                applicationWindow().showPassiveNotification(i18n("Invalid backup format"), 3000)
+                showNotification(i18n("Invalid backup format"))
             }
         }
     }
