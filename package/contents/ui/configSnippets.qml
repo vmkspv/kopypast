@@ -16,6 +16,9 @@ SimpleKCM {
     property string cfg_snippets: "[]"
     property string cfg_snippetsDefault: "[]"
 
+    property var deletedSnippet: null
+    property int deletedIndex: -1
+
     Binding {
         target: snippetModel
         property: "configValue"
@@ -25,6 +28,33 @@ SimpleKCM {
     Local.SnippetModel {
         id: snippetModel
         onConfigValueChanged: cfg_snippets = configValue
+    }
+
+    function deleteSnippet(index) {
+        deletedSnippet = snippetModel.get(index)
+        deletedIndex = index
+        snippetModel.remove(index)
+
+        var title = deletedSnippet.title.length > 20
+            ? deletedSnippet.title.substring(0, 20) + "..."
+            : deletedSnippet.title
+
+        applicationWindow().showPassiveNotification(
+            i18n("Snippet \"%1\" deleted", title), 5000, i18n("Undo"), function() {
+                undoDelete()
+            }
+        )
+    }
+
+    function undoDelete() {
+        if (deletedSnippet && deletedIndex >= 0) {
+            var insertIndex = Math.min(deletedIndex, snippetModel.count)
+            snippetModel.snippets.splice(insertIndex, 0, deletedSnippet)
+            snippetModel.configValue = JSON.stringify(snippetModel.snippets)
+
+            deletedSnippet = null
+            deletedIndex = -1
+        }
     }
 
     ColumnLayout {
@@ -131,7 +161,7 @@ SimpleKCM {
                                     ToolButton {
                                         icon.name: "edit-delete"
                                         display: ToolButton.IconOnly
-                                        onClicked: snippetModel.remove(index)
+                                        onClicked: deleteSnippet(index)
                                         ToolTip.text: i18n("Delete")
                                         ToolTip.visible: hovered
                                         ToolTip.delay: Kirigami.Units.toolTipDelay
