@@ -30,6 +30,24 @@ SimpleKCM {
         onConfigValueChanged: cfg_snippets = configValue
     }
 
+    function duplicateSnippet(index) {
+        var originalSnippet = snippetModel.get(index)
+        var duplicatedSnippet = {
+            title: originalSnippet.title + " " + i18n("(copy)"),
+            text: originalSnippet.text,
+            usageCount: 0
+        }
+        snippetModel.append(duplicatedSnippet)
+
+        var title = originalSnippet.title.length > 20
+            ? originalSnippet.title.substring(0, 20) + "..."
+            : originalSnippet.title
+
+        applicationWindow().showPassiveNotification(
+            i18n("Snippet \"%1\" duplicated", title), 3000
+        )
+    }
+
     function deleteSnippet(index) {
         deletedSnippet = snippetModel.get(index)
         deletedIndex = index
@@ -154,6 +172,16 @@ SimpleKCM {
                                         display: ToolButton.IconOnly
                                         onClicked: snippetDialog.editSnippet(index)
                                         ToolTip.text: i18n("Edit")
+                                        ToolTip.visible: hovered
+                                        ToolTip.delay: Kirigami.Units.toolTipDelay
+                                    }
+
+                                    ToolButton {
+                                        icon.name: "edit-duplicate"
+                                        display: ToolButton.IconOnly
+                                        onClicked: duplicateSnippet(index)
+                                        enabled: snippetModel.count < plasmoid.configuration.maxSnippets
+                                        ToolTip.text: enabled ? i18n("Duplicate") : i18n("Maximum limit reached")
                                         ToolTip.visible: hovered
                                         ToolTip.delay: Kirigami.Units.toolTipDelay
                                     }
