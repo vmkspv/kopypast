@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-03-20 14:00+0300\n"
-"PO-Revision-Date: 2025-03-22 15:00+0300\n"
+"POT-Creation-Date: 2025-07-14 12:00+0300\n"
+"PO-Revision-Date: 2025-07-14 13:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -91,6 +91,11 @@ msgstr "Содержимое резервной копии"
 msgid "Copy"
 msgstr "Копировать"
 
+#: package/contents/ui/BackupDialog.qml
+#: package/contents/ui/SnippetDialog.qml
+msgid "Paste"
+msgstr "Вставить"
+
 #: package/contents/ui/configGeneral.qml
 msgid "Appearance"
 msgstr "Внешний вид"
@@ -132,6 +137,14 @@ msgid "Show only snippet titles without content previews"
 msgstr "Отображать только заголовки сниппетов без содержания"
 
 #: package/contents/ui/configGeneral.qml
+msgid "Mark new snippets"
+msgstr "Отмечать новые сниппеты"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Highlight newly added snippets until first use"
+msgstr "Выделять новые сниппеты до первого использования"
+
+#: package/contents/ui/configGeneral.qml
 msgid "Functionality"
 msgstr "Функциональность"
 
@@ -140,12 +153,32 @@ msgid "Configure behavior and limitations"
 msgstr "Настройте поведение и ограничения виджета"
 
 #: package/contents/ui/configGeneral.qml
+msgid "Default snippet template:"
+msgstr "Шаблон по умолчанию:"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enter text for new snippets (optional)"
+msgstr "Введите содержание новых сниппетов (необязательно)"
+
+#: package/contents/ui/configGeneral.qml
+msgid "This text will be pre-filled when creating new snippets"
+msgstr "Этот текст будет предзаполнен при создании сниппетов"
+
+#: package/contents/ui/configGeneral.qml
 msgid "Maximum number of snippets:"
 msgstr "Максимальное число сниппетов:"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Limit the number of snippets for optimal performance"
 msgstr "Ограничьте количество сниппетов для производительности"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Sort by usage"
+msgstr "Сортировать по частоте"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Arrange snippets by how often they are used"
+msgstr "Упорядочить сниппеты по частоте использования"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Keyboard navigation"
@@ -172,6 +205,22 @@ msgid "Handle available variables in the snippet text"
 msgstr "Интерпретировать доступные переменные в сниппетах"
 
 #: package/contents/ui/configSnippets.qml
+msgid "(copy)"
+msgstr "(копия)"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Snippet \"%1\" duplicated"
+msgstr "Копия \"%1\" создана"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Snippet \"%1\" deleted"
+msgstr "Сниппет \"%1\" удалён"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Undo"
+msgstr "Отменить"
+
+#: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
 msgstr "Сниппеты не добавлены"
 
@@ -184,6 +233,14 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: package/contents/ui/configSnippets.qml
+msgid "Duplicate"
+msgstr "Дублировать"
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
+msgstr "Достигнут заданный предел"
+
+#: package/contents/ui/configSnippets.qml
 msgid "Delete"
 msgstr "Удалить"
 
@@ -191,10 +248,6 @@ msgstr "Удалить"
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Добавить"
-
-#: package/contents/ui/configSnippets.qml
-msgid "Maximum limit reached"
-msgstr "Достигнут заданный предел"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Backup"
@@ -223,6 +276,10 @@ msgstr "Нет подходящих сниппетов"
 #: package/contents/ui/main.qml
 msgid "Try a different search term"
 msgstr "Попробуйте другой поисковый запрос"
+
+#: package/contents/ui/main.qml
+msgid "New!"
+msgstr "Новый"
 
 #: package/contents/ui/main.qml
 msgid "%1 snippet"

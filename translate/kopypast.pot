@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-03-20 14:00+0300\n"
+"POT-Creation-Date: 2025-07-14 12:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -88,6 +88,11 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
+#: package/contents/ui/BackupDialog.qml
+#: package/contents/ui/SnippetDialog.qml
+msgid "Paste"
+msgstr ""
+
 #: package/contents/ui/configGeneral.qml
 msgid "Appearance"
 msgstr ""
@@ -129,6 +134,14 @@ msgid "Show only snippet titles without content previews"
 msgstr ""
 
 #: package/contents/ui/configGeneral.qml
+msgid "Mark new snippets"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Highlight newly added snippets until first use"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
 msgid "Functionality"
 msgstr ""
 
@@ -137,11 +150,31 @@ msgid "Configure behavior and limitations"
 msgstr ""
 
 #: package/contents/ui/configGeneral.qml
+msgid "Default snippet template:"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enter text for new snippets (optional)"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "This text will be pre-filled when creating new snippets"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
 msgid "Maximum number of snippets:"
 msgstr ""
 
 #: package/contents/ui/configGeneral.qml
 msgid "Limit the number of snippets for optimal performance"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Sort by usage"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Arrange snippets by how often they are used"
 msgstr ""
 
 #: package/contents/ui/configGeneral.qml
@@ -169,6 +202,22 @@ msgid "Handle available variables in the snippet text"
 msgstr ""
 
 #: package/contents/ui/configSnippets.qml
+msgid "(copy)"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Snippet \"%1\" duplicated"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Snippet \"%1\" deleted"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Undo"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
 msgstr ""
 
@@ -181,16 +230,20 @@ msgid "Edit"
 msgstr ""
 
 #: package/contents/ui/configSnippets.qml
+msgid "Duplicate"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
 msgid "Delete"
 msgstr ""
 
 #: package/contents/ui/configSnippets.qml
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
-msgstr ""
-
-#: package/contents/ui/configSnippets.qml
-msgid "Maximum limit reached"
 msgstr ""
 
 #: package/contents/ui/configSnippets.qml
@@ -219,6 +272,10 @@ msgstr ""
 
 #: package/contents/ui/main.qml
 msgid "Try a different search term"
+msgstr ""
+
+#: package/contents/ui/main.qml
+msgid "New!"
 msgstr ""
 
 #: package/contents/ui/main.qml
