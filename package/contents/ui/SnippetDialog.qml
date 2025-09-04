@@ -153,6 +153,9 @@ Dialog {
                     Label { text: "{ISO_TIME}"; font.family: "monospace" }
                     Label { text: i18n("time in HH:mm:ss format"); opacity: 0.7 }
 
+                    Label { text: "{ISO_TIME_DASHED}"; font.family: "monospace" }
+                    Label { text: i18n("time in HH-mm-ss format"); opacity: 0.7 }
+
                     Label { text: "{ISO_DATETIME}"; font.family: "monospace" }
                     Label { text: i18n("full ISO date and time"); opacity: 0.7 }
 
@@ -168,11 +171,17 @@ Dialog {
                     Label { text: "{HOUR}"; font.family: "monospace" }
                     Label { text: i18n("current hour (00-23)"); opacity: 0.7 }
 
+                    Label { text: "{HOUR12}"; font.family: "monospace" }
+                    Label { text: i18n("current hour (01-12)"); opacity: 0.7 }
+
                     Label { text: "{MINUTE}"; font.family: "monospace" }
                     Label { text: i18n("current minute (00-59)"); opacity: 0.7 }
 
                     Label { text: "{SECOND}"; font.family: "monospace" }
                     Label { text: i18n("current second (00-59)"); opacity: 0.7 }
+                
+                    Label { text: "{AMPM}"; font.family: "monospace" }
+                    Label { text: i18n("AM/PM marker"); opacity: 0.7 }
                 }
             }
         }
