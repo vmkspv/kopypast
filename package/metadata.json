@@ -21,7 +21,7 @@
         "Id": "io.github.vmkspv.kopypast",
         "License": "GPL-3.0",
         "Name": "Kopypast",
-        "Version": "1.0.4",
+        "Version": "1.0.5",
         "Website": "https://github.com/vmkspv/kopypast"
     },
     "X-Plasma-API": "declarativeappletscript",
