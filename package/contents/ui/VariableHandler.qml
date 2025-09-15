@@ -14,21 +14,32 @@ QtObject {
         var now = new Date()
 
         var replacements = {
-            "{DATE}": Qt.formatDate(now, Qt.LocaleDate),
-            "{TIME}": Qt.formatTime(now, Qt.LocaleTime),
-            "{DATETIME}": Qt.formatDateTime(now, Qt.DefaultLocaleShortDate),
-            "{ISO_DATE}": now.toISOString().split('T')[0],
-            "{ISO_TIME}": now.toISOString().split('T')[1].split('.')[0],
-            "{ISO_TIME_DASHED}": now.toISOString().split('T')[1].split('.')[0].replace(/:/g, '-'),
-            "{ISO_DATETIME}": now.toISOString().replace('T', ' ').split('.')[0],
-            "{YEAR}": now.getFullYear().toString(),
-            "{MONTH}": (now.getMonth() + 1).toString().padStart(2, '0'),
-            "{DAY}": now.getDate().toString().padStart(2, '0'),
-            "{HOUR}": now.getHours().toString().padStart(2, '0'),
-            "{HOUR12}": ((now.getHours() % 12) || 12).toString().padStart(2, '0'),
-            "{MINUTE}": now.getMinutes().toString().padStart(2, '0'),
-            "{SECOND}": now.getSeconds().toString().padStart(2, '0'),
-            "{AMPM}": now.getHours() >= 12 ? "PM" : "AM"
+            "{DATE}"           : Qt.formatDate(now, Qt.LocaleDate),
+            "{TIME}"           : Qt.formatTime(now, Qt.LocaleTime),
+            "{DATETIME}"       : Qt.formatDateTime(now, Qt.DefaultLocaleShortDate),
+            "{ISO_DATE}"       : now.getFullYear() + '-' +
+                                 (now.getMonth() + 1).toString().padStart(2, '0') + '-' +
+                                 now.getDate().toString().padStart(2, '0'),
+            "{ISO_TIME}"       : now.getHours().toString().padStart(2, '0') + ':' +
+                                 now.getMinutes().toString().padStart(2, '0') + ':' +
+                                 now.getSeconds().toString().padStart(2, '0'),
+            "{ISO_TIME_DASHED}": now.getHours().toString().padStart(2, '0') + '-' +
+                                 now.getMinutes().toString().padStart(2, '0') + '-' +
+                                 now.getSeconds().toString().padStart(2, '0'),
+            "{ISO_DATETIME}"   : now.getFullYear() + '-' +
+                                 (now.getMonth() + 1).toString().padStart(2, '0') + '-' +
+                                 now.getDate().toString().padStart(2, '0') + ' ' +
+                                 now.getHours().toString().padStart(2, '0') + ':' +
+                                 now.getMinutes().toString().padStart(2, '0') + ':' +
+                                 now.getSeconds().toString().padStart(2, '0'),
+            "{YEAR}"           : now.getFullYear().toString(),
+            "{MONTH}"          : (now.getMonth() + 1).toString().padStart(2, '0'),
+            "{DAY}"            : now.getDate().toString().padStart(2, '0'),
+            "{HOUR}"           : now.getHours().toString().padStart(2, '0'),
+            "{HOUR12}"         : ((now.getHours() % 12) || 12).toString().padStart(2, '0'),
+            "{MINUTE}"         : now.getMinutes().toString().padStart(2, '0'),
+            "{SECOND}"         : now.getSeconds().toString().padStart(2, '0'),
+            "{AMPM}"           : now.getHours() >= 12 ? "PM" : "AM"
         }
 
         var result = text
