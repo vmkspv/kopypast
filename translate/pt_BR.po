@@ -1,7 +1,7 @@
-# Russian translations for Kopypast package.
+# Brazilian Portuguese translations for Kopypast package.
 # Copyright (C) 2025 Vladimir Kosolapov
 # This file is distributed under the same license as the Kopypast package.
-# Vladimir Kosolapov, 2025.
+# Cristiano Fraga G. Nunes <cfgnunes@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
