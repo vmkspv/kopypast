@@ -204,6 +204,7 @@ PlasmoidItem {
                 delegate: Kirigami.SwipeListItem {
                     id: snippetDelegate
                     width: ListView.view.width
+                    implicitHeight: Kirigami.Units.iconSizes.large + Kirigami.Units.smallSpacing
                     highlighted: plasmoid.configuration.useKbdNavigation && ListView.isCurrentItem
 
                     contentItem: RowLayout {
@@ -303,6 +304,7 @@ PlasmoidItem {
 
         ToolBar {
             Layout.fillWidth: true
+            implicitHeight: Kirigami.Units.iconSizes.medium + Kirigami.Units.largeSpacing
             position: ToolBar.Footer
             visible: plasmoid.configuration.showToolbarPanel
 
