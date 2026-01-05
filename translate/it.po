@@ -1,5 +1,5 @@
 # Italian translations for Kopypast package.
-# Copyright (C) 2025 Vladimir Kosolapov
+# Copyright (C) 2025-2026 Vladimir Kosolapov
 # This file is distributed under the same license as the Kopypast package.
 # Albano Battistella <albanobattistella@gmail.com>, 2025.
 #
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-03-20 14:00+0300\n"
+"POT-Creation-Date: 2026-01-05 12:00+0300\n"
 "PO-Revision-Date: 2025-03-20 13:00+0100\n"
 "Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -87,6 +87,11 @@ msgstr "Contenuto di backup"
 msgid "Copy"
 msgstr "Copia"
 
+#: package/contents/ui/BackupDialog.qml
+#: package/contents/ui/SnippetDialog.qml
+msgid "Paste"
+msgstr ""
+
 #: package/contents/ui/configGeneral.qml
 msgid "Appearance"
 msgstr "Aspetto"
@@ -128,6 +133,14 @@ msgid "Show only snippet titles without content previews"
 msgstr "Mostra solo i titoli degli snippet senza anteprime dei contenuti"
 
 #: package/contents/ui/configGeneral.qml
+msgid "Mark new snippets"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Highlight newly added snippets until first use"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
 msgid "Functionality"
 msgstr "Funzionalità"
 
@@ -136,12 +149,32 @@ msgid "Configure behavior and limitations"
 msgstr "Configurare comportamento e limitazioni"
 
 #: package/contents/ui/configGeneral.qml
+msgid "Default snippet template:"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Enter text for new snippets (optional)"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "This text will be pre-filled when creating new snippets"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
 msgid "Maximum number of snippets:"
 msgstr "Numero massimo di snippet:"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Limit the number of snippets for optimal performance"
 msgstr "Limita il numero di snippet per prestazioni ottimali"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Sort by usage"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Arrange snippets by how often they are used"
+msgstr ""
 
 #: package/contents/ui/configGeneral.qml
 msgid "Keyboard navigation"
@@ -168,6 +201,22 @@ msgid "Handle available variables in the snippet text"
 msgstr "Gestire le variabili disponibili nel testo dello snippet"
 
 #: package/contents/ui/configSnippets.qml
+msgid "(copy)"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Snippet \"%1\" duplicated"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Snippet \"%1\" deleted"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Undo"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
 msgstr "Nessun snippets aggiunto"
 
@@ -180,6 +229,14 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: package/contents/ui/configSnippets.qml
+msgid "Duplicate"
+msgstr ""
+
+#: package/contents/ui/configSnippets.qml
+msgid "Maximum limit reached"
+msgstr "Limite massimo raggiunto"
+
+#: package/contents/ui/configSnippets.qml
 msgid "Delete"
 msgstr "Elimina"
 
@@ -187,10 +244,6 @@ msgstr "Elimina"
 #: package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Aggiungi Snippet"
-
-#: package/contents/ui/configSnippets.qml
-msgid "Maximum limit reached"
-msgstr "Limite massimo raggiunto"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Backup"
@@ -219,6 +272,10 @@ msgstr "Nessun snippet corrispondente"
 #: package/contents/ui/main.qml
 msgid "Try a different search term"
 msgstr "Prova un termine di ricerca diverso"
+
+#: package/contents/ui/main.qml
+msgid "New!"
+msgstr ""
 
 #: package/contents/ui/main.qml
 msgid "%1 snippet"
@@ -275,6 +332,10 @@ msgid "time in HH:mm:ss format"
 msgstr "ora nel formato HH:mm:ss"
 
 #: package/contents/ui/SnippetDialog.qml
+msgid "time in HH-mm-ss format"
+msgstr "ora nel formato HH-mm-ss"
+
+#: package/contents/ui/SnippetDialog.qml
 msgid "full ISO date and time"
 msgstr "data e ora ISO complete"
 
@@ -295,9 +356,17 @@ msgid "current hour (00-23)"
 msgstr "ora corrente (00-23)"
 
 #: package/contents/ui/SnippetDialog.qml
+msgid "current hour (01-12)"
+msgstr "ora corrente (01-12)"
+
+#: package/contents/ui/SnippetDialog.qml
 msgid "current minute (00-59)"
 msgstr "minuto corrente (00-59)"
 
 #: package/contents/ui/SnippetDialog.qml
 msgid "current second (00-59)"
 msgstr "secondo corrente (00-59)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "AM/PM marker"
+msgstr ""

@@ -1,5 +1,5 @@
 # Ukrainian translations for Kopypast package.
-# Copyright (C) 2025 Vladimir Kosolapov
+# Copyright (C) 2025-2026 Vladimir Kosolapov
 # This file is distributed under the same license as the Kopypast package.
 # Vladimir Kosolapov, 2025.
 #
@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2025-07-14 12:00+0300\n"
-"PO-Revision-Date: 2025-07-14 13:00+0300\n"
+"POT-Creation-Date: 2026-01-05 12:00+0300\n"
+"PO-Revision-Date: 2026-01-05 13:00+0300\n"
 "Last-Translator: Vladimir Kosolapov\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -341,6 +341,10 @@ msgid "time in HH:mm:ss format"
 msgstr "час у форматі гг:хх:сс"
 
 #: package/contents/ui/SnippetDialog.qml
+msgid "time in HH-mm-ss format"
+msgstr "час у форматі гг-хх-сс"
+
+#: package/contents/ui/SnippetDialog.qml
 msgid "full ISO date and time"
 msgstr "повна дата та час за ISO"
 
@@ -361,9 +365,17 @@ msgid "current hour (00-23)"
 msgstr "поточна година (00-23)"
 
 #: package/contents/ui/SnippetDialog.qml
+msgid "current hour (01-12)"
+msgstr "поточна година (01-12)"
+
+#: package/contents/ui/SnippetDialog.qml
 msgid "current minute (00-59)"
 msgstr "поточна хвилина (00-59)"
 
 #: package/contents/ui/SnippetDialog.qml
 msgid "current second (00-59)"
 msgstr "поточна секунда (00-59)"
+
+#: package/contents/ui/SnippetDialog.qml
+msgid "AM/PM marker"
+msgstr "маркер AM/PM"
