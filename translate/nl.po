@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
 "POT-Creation-Date: 2026-01-05 12:00+0300\n"
-"PO-Revision-Date: 2025-03-25 11:19+0100\n"
+"PO-Revision-Date: 2026-01-06 11:33+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 
 #: package/contents/config/config.qml
 msgid "Snippets"
@@ -48,7 +48,8 @@ msgstr "Alle knipsels zijn duplicaten"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Cannot restore snippets: maximum limit (%1) reached"
-msgstr "De knipsels kunnen niet worden hersteld: het maximumaantal (%1) is bereikt"
+msgstr ""
+"De knipsels kunnen niet worden hersteld: het maximumaantal (%1) is bereikt"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Only restored %1 snippet due to maximum limit"
@@ -88,10 +89,9 @@ msgstr "Reservekopie maken"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: package/contents/ui/BackupDialog.qml
-#: package/contents/ui/SnippetDialog.qml
+#: package/contents/ui/BackupDialog.qml package/contents/ui/SnippetDialog.qml
 msgid "Paste"
-msgstr ""
+msgstr "Plakken"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Appearance"
@@ -103,7 +103,7 @@ msgstr "Zet de widget naar eigen hand"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Monochrome icon"
-msgstr "Monochroom pictogram"
+msgstr "Monochroom pictogram gebruiken"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Use a monochrome icon that matches the color scheme"
@@ -135,11 +135,11 @@ msgstr "Toon alleen de titels van knipsels, zonder voorvertoning van de inhoud"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Mark new snippets"
-msgstr ""
+msgstr "Nieuwe knipsels aanduiden"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Highlight newly added snippets until first use"
-msgstr ""
+msgstr "Voorzie nieuwe knipsels van een aanduiding, tot aan het eerste gebruik"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Functionality"
@@ -151,15 +151,16 @@ msgstr "Stel het gedrag en de beperkingen in"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Default snippet template:"
-msgstr ""
+msgstr "Standaard knipselsjabloon:"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Enter text for new snippets (optional)"
-msgstr ""
+msgstr "Voer een tekst in (optioneel)"
 
 #: package/contents/ui/configGeneral.qml
 msgid "This text will be pre-filled when creating new snippets"
 msgstr ""
+"Deze tekst zal vooraf worden ingevuld bij het maken van nieuwe knipsels"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Maximum number of snippets:"
@@ -171,11 +172,11 @@ msgstr "Tip: beperk het aantal om de prestaties te verbeteren"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Sort by usage"
-msgstr ""
+msgstr "Sorteren op gebruik"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Arrange snippets by how often they are used"
-msgstr ""
+msgstr "Sorteer knipsels op hoe vaak ze gebruikt worden"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Keyboard navigation"
@@ -183,7 +184,9 @@ msgstr "Toetsenbordnavigatie"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Use the keyboard keys to navigate and select snippets"
-msgstr "Gebruik je toetsenbord om door knipsels te navigeren en knipsels uit te kiezen"
+msgstr ""
+"Gebruik je toetsenbord om door knipsels te navigeren en knipsels uit te "
+"kiezen"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Clear search on copy"
@@ -203,19 +206,19 @@ msgstr "Behandel variabelen in de knipseltekst"
 
 #: package/contents/ui/configSnippets.qml
 msgid "(copy)"
-msgstr ""
+msgstr "(kopie)"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Snippet \"%1\" duplicated"
-msgstr ""
+msgstr "‘%1’ is gekloond"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Snippet \"%1\" deleted"
-msgstr ""
+msgstr "‘%1’ is verwijderd"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Undo"
-msgstr ""
+msgstr "Ongedaan maken"
 
 #: package/contents/ui/configSnippets.qml
 msgid "No snippets added"
@@ -231,7 +234,7 @@ msgstr "Bewerken"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Duplicate"
-msgstr ""
+msgstr "Klonen"
 
 #: package/contents/ui/configSnippets.qml
 msgid "Maximum limit reached"
@@ -241,8 +244,7 @@ msgstr "Maximumaantal bereikt"
 msgid "Delete"
 msgstr "Verwĳderen"
 
-#: package/contents/ui/configSnippets.qml
-#: package/contents/ui/SnippetDialog.qml
+#: package/contents/ui/configSnippets.qml package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Knipsel toevoegen"
 
@@ -276,7 +278,7 @@ msgstr "Probeer een andere zoekopdracht"
 
 #: package/contents/ui/main.qml
 msgid "New!"
-msgstr ""
+msgstr "Nieuw!"
 
 #: package/contents/ui/main.qml
 msgid "%1 snippet"
@@ -370,4 +372,4 @@ msgstr "huidige seconden (00-59)"
 
 #: package/contents/ui/SnippetDialog.qml
 msgid "AM/PM marker"
-msgstr ""
+msgstr "AM/PM-aanduiding"
