@@ -17,29 +17,18 @@ QtObject {
             "{DATE}"           : Qt.formatDate(now, Qt.LocaleDate),
             "{TIME}"           : Qt.formatTime(now, Qt.LocaleTime),
             "{DATETIME}"       : Qt.formatDateTime(now, Qt.DefaultLocaleShortDate),
-            "{ISO_DATE}"       : now.getFullYear() + '-' +
-                                 (now.getMonth() + 1).toString().padStart(2, '0') + '-' +
-                                 now.getDate().toString().padStart(2, '0'),
-            "{ISO_TIME}"       : now.getHours().toString().padStart(2, '0') + ':' +
-                                 now.getMinutes().toString().padStart(2, '0') + ':' +
-                                 now.getSeconds().toString().padStart(2, '0'),
-            "{ISO_TIME_DASHED}": now.getHours().toString().padStart(2, '0') + '-' +
-                                 now.getMinutes().toString().padStart(2, '0') + '-' +
-                                 now.getSeconds().toString().padStart(2, '0'),
-            "{ISO_DATETIME}"   : now.getFullYear() + '-' +
-                                 (now.getMonth() + 1).toString().padStart(2, '0') + '-' +
-                                 now.getDate().toString().padStart(2, '0') + ' ' +
-                                 now.getHours().toString().padStart(2, '0') + ':' +
-                                 now.getMinutes().toString().padStart(2, '0') + ':' +
-                                 now.getSeconds().toString().padStart(2, '0'),
-            "{YEAR}"           : now.getFullYear().toString(),
-            "{MONTH}"          : (now.getMonth() + 1).toString().padStart(2, '0'),
-            "{DAY}"            : now.getDate().toString().padStart(2, '0'),
-            "{HOUR}"           : now.getHours().toString().padStart(2, '0'),
+            "{ISO_DATE}"       : Qt.formatDate(now, "yyyy-MM-dd"),
+            "{ISO_TIME}"       : Qt.formatTime(now, "HH:mm:ss"),
+            "{ISO_TIME_DASHED}": Qt.formatTime(now, "HH-mm-ss"),
+            "{ISO_DATETIME}"   : Qt.formatDateTime(now, "yyyy-MM-dd HH:mm:ss"),
+            "{YEAR}"           : Qt.formatDate(now, "yyyy"),
+            "{MONTH}"          : Qt.formatDate(now, "MM"),
+            "{DAY}"            : Qt.formatDate(now, "dd"),
+            "{HOUR}"           : Qt.formatTime(now, "HH"),
             "{HOUR12}"         : ((now.getHours() % 12) || 12).toString().padStart(2, '0'),
-            "{MINUTE}"         : now.getMinutes().toString().padStart(2, '0'),
-            "{SECOND}"         : now.getSeconds().toString().padStart(2, '0'),
-            "{AMPM}"           : now.getHours() >= 12 ? "PM" : "AM"
+            "{MINUTE}"         : Qt.formatTime(now, "mm"),
+            "{SECOND}"         : Qt.formatTime(now, "ss"),
+            "{AMPM}"           : Qt.formatTime(now, "AP")
         }
 
         var result = text
