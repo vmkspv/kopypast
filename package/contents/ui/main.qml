@@ -14,12 +14,11 @@ import "." as Local
 PlasmoidItem {
     id: root
 
-    preferredRepresentation: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
-        ? compactRepresentation
-        : fullRepresentation
+    preferredRepresentation: isPanel ? compactRepresentation : fullRepresentation
 
     property bool isCopied: false
     property string searchQuery: ""
+    readonly property bool isPanel: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
     hideOnWindowDeactivate: !plasmoid.configuration.isPinned
 
     Local.SnippetModel {
@@ -74,12 +73,8 @@ PlasmoidItem {
         Layout.minimumHeight: Kirigami.Units.gridUnit * 18
         Layout.preferredWidth: Kirigami.Units.gridUnit * 20
         Layout.preferredHeight: Kirigami.Units.gridUnit * 28
-        Layout.maximumWidth: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
-            ? Kirigami.Units.gridUnit * 28
-            : root.width
-        Layout.maximumHeight: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
-            ? Kirigami.Units.gridUnit * 42
-            : root.height
+        Layout.maximumWidth: isPanel ? Kirigami.Units.gridUnit * 28 : root.width
+        Layout.maximumHeight: isPanel ? Kirigami.Units.gridUnit * 42 : root.height
 
         Keys.forwardTo: [snippetList]
         focus: !plasmoid.configuration.showSearchField || !searchField.enabled
@@ -144,12 +139,11 @@ PlasmoidItem {
                         var processedText = variableHandler.processVariables(snippet.text)
                         KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(processedText)
 
-                        if (plasmoid.configuration.isPinned ||
-                            !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
+                        if (plasmoid.configuration.isPinned || !isPanel) {
                             root.isCopied = true
                             resetTimer.restart()
                         }
-                        if (plasmoid.formFactor === 2 || plasmoid.formFactor === 3) {
+                        if (isPanel) {
                             if (!plasmoid.configuration.isPinned) {
                                 root.expanded = false
                             } else if (plasmoid.configuration.clearSearchOnCopy) {
@@ -256,12 +250,11 @@ PlasmoidItem {
                         var processedText = variableHandler.processVariables(snippet.text)
                         KirigamiPrivate.CopyHelperPrivate.copyTextToClipboard(processedText)
 
-                        if (plasmoid.configuration.isPinned ||
-                            !(plasmoid.formFactor === 2 || plasmoid.formFactor === 3)) {
+                        if (plasmoid.configuration.isPinned || !isPanel) {
                             root.isCopied = true
                             resetTimer.restart()
                         }
-                        if (plasmoid.formFactor === 2 || plasmoid.formFactor === 3) {
+                        if (isPanel) {
                             if (!plasmoid.configuration.isPinned) {
                                 root.expanded = false
                             } else if (plasmoid.configuration.clearSearchOnCopy) {
@@ -353,7 +346,7 @@ PlasmoidItem {
                     ToolTip.visible: hovered
                     ToolTip.delay: Kirigami.Units.toolTipDelay
                     KeyNavigation.left: configButton
-                    visible: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
+                    visible: isPanel
                     enabled: visible
                 }
             }

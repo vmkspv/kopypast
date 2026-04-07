@@ -126,11 +126,10 @@ SimpleKCM {
                         width: ListView.view.width
                         height: snippetDelegate.implicitHeight
 
-                        Kirigami.SwipeListItem {
+                        ItemDelegate {
                             id: snippetDelegate
                             width: parent.width
                             implicitHeight: Kirigami.Units.iconSizes.large + Kirigami.Units.smallSpacing
-                            swipe.enabled: false
 
                             contentItem: RowLayout {
                                 spacing: Kirigami.Units.smallSpacing
