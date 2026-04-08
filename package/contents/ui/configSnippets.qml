@@ -86,12 +86,9 @@ SimpleKCM {
                 anchors.centerIn: parent
                 width: parent.width - (Kirigami.Units.largeSpacing * 4)
                 visible: snippetModel.count === 0
-                icon {
-                    source: Kirigami.Theme.textColor.hslLightness < 0.5
-                        ? Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-light.svg")
-                        : Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-dark.svg")
-                    color: Kirigami.Theme.textColor
-                }
+                icon.source: Kirigami.Theme.textColor.hslLightness < 0.5
+                    ? Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-light.svg").toString()
+                    : Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-dark.svg").toString()
                 text: i18n("No snippets added")
                 explanation: i18n("Add your first snippet using the button below")
             }

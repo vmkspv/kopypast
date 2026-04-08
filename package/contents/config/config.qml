@@ -9,12 +9,12 @@ import org.kde.plasma.configuration
 ConfigModel {
     ConfigCategory {
         name: i18n("Snippets")
-        icon: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast.svg")
+        icon: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast.svg").toString()
         source: "configSnippets.qml"
     }
     ConfigCategory {
         name: i18n("General")
-        icon: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-config.svg")
+        icon: Qt.resolvedUrl("../icons/io.github.vmkspv.kopypast-config.svg").toString()
         source: "configGeneral.qml"
     }
 }
