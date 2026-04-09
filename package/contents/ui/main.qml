@@ -19,6 +19,7 @@ PlasmoidItem {
     property bool isCopied: false
     property string searchQuery: ""
     readonly property bool isPanel: plasmoid.formFactor === 2 || plasmoid.formFactor === 3
+    readonly property var closeDelayValues: [0, 700, 1000, 1500]
     hideOnWindowDeactivate: !plasmoid.configuration.isPinned
 
     Local.SnippetModel {
@@ -47,6 +48,24 @@ PlasmoidItem {
         id: resetTimer
         interval: 2000
         onTriggered: root.isCopied = false
+    }
+
+    Timer {
+        id: closeTimer
+        interval: closeDelayValues[Math.max(0, Math.min(closeDelayValues.length - 1, plasmoid.configuration.closeDelayAfterCopy))]
+        onTriggered: root.expanded = false
+    }
+
+    function closeAfterCopy() {
+        if (!isPanel || plasmoid.configuration.isPinned) {
+            return
+        }
+
+        if (closeTimer.interval > 0) {
+            closeTimer.restart()
+        } else {
+            root.expanded = false
+        }
     }
 
     compactRepresentation: Item {
@@ -145,7 +164,7 @@ PlasmoidItem {
                         }
                         if (isPanel) {
                             if (!plasmoid.configuration.isPinned) {
-                                root.expanded = false
+                                closeAfterCopy()
                             } else if (plasmoid.configuration.clearSearchOnCopy) {
                                 searchField.clear()
                                 root.searchQuery = ""
@@ -253,7 +272,7 @@ PlasmoidItem {
                         }
                         if (isPanel) {
                             if (!plasmoid.configuration.isPinned) {
-                                root.expanded = false
+                                closeAfterCopy()
                             } else if (plasmoid.configuration.clearSearchOnCopy) {
                                 searchField.clear()
                                 root.searchQuery = ""

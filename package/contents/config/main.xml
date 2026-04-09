@@ -35,6 +35,9 @@
         <entry name="maxSnippets" type="Int">
             <default>50</default>
         </entry>
+        <entry name="closeAfterCopy" type="Int">
+            <default>0</default>
+        </entry>
         <entry name="sortByUsage" type="Bool">
             <default>false</default>
         </entry>

@@ -19,6 +19,7 @@ SimpleKCM {
     property alias cfg_showNewBadges: showNewBadges.checked
     property alias cfg_defaultTemplate: defaultTemplate.text
     property alias cfg_maxSnippets: maxSnippetsSpinner.value
+    property alias cfg_closeAfterCopy: closeAfterCopyCombo.currentIndex
     property alias cfg_sortByUsage: sortByUsage.checked
     property alias cfg_useKbdNavigation: useKbdNavigation.checked
     property alias cfg_clearSearchOnCopy: clearSearchOnCopy.checked
@@ -218,6 +219,39 @@ SimpleKCM {
 
                 Label {
                     text: i18n("Limit the number of snippets for optimal performance")
+                    font: Kirigami.Theme.smallFont
+                    opacity: 0.7
+                }
+            }
+
+            Item { implicitHeight: Kirigami.Units.smallSpacing }
+
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                visible: isPanel
+
+                RowLayout {
+                    spacing: Kirigami.Units.smallSpacing
+
+                    Label {
+                        text: i18n("Close delay after copy:")
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+
+                    ComboBox {
+                        id: closeAfterCopyCombo
+                        model: [
+                            i18n("Instant"),
+                            i18n("700 ms"),
+                            i18n("1 second"),
+                            i18n("1.5 seconds")
+                        ]
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                }
+
+                Label {
+                    text: i18n("Delay auto-close after copying a snippet")
                     font: Kirigami.Theme.smallFont
                     opacity: 0.7
                 }
