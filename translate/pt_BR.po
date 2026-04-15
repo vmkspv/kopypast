@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
-"POT-Creation-Date: 2026-01-05 12:00+0300\n"
+"POT-Creation-Date: 2026-04-15 12:00+0300\n"
 "PO-Revision-Date: 2025-11-26 18:38-0300\n"
 "Last-Translator: Cristiano Fraga G. Nunes <cfgnunes@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <LL@li.org>\n"
@@ -167,6 +167,30 @@ msgstr "Número máximo de snippets:"
 #: package/contents/ui/configGeneral.qml
 msgid "Limit the number of snippets for optimal performance"
 msgstr "Limitar o número de snippets para melhor desempenho"
+
+#: package/contents/ui/configGeneral.qml
+msgid "Close delay after copy:"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Instant"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "700 ms"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "1 second"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "1.5 seconds"
+msgstr ""
+
+#: package/contents/ui/configGeneral.qml
+msgid "Delay auto-close after copying a snippet"
+msgstr ""
 
 #: package/contents/ui/configGeneral.qml
 msgid "Sort by usage"
