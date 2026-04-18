@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
 "POT-Creation-Date: 2026-04-15 12:00+0300\n"
-"PO-Revision-Date: 2026-01-06 11:33+0100\n"
+"PO-Revision-Date: 2026-04-18 10:52+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -89,8 +89,7 @@ msgstr "Reservekopie maken"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: package/contents/ui/BackupDialog.qml
-#: package/contents/ui/SnippetDialog.qml
+#: package/contents/ui/BackupDialog.qml package/contents/ui/SnippetDialog.qml
 msgid "Paste"
 msgstr "Plakken"
 
@@ -173,27 +172,27 @@ msgstr "Tip: beperk het aantal om de prestaties te verbeteren"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Close delay after copy:"
-msgstr ""
+msgstr "Wachttijd alvorens te sluiten na kopiëren:"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Instant"
-msgstr ""
+msgstr "Geen"
 
 #: package/contents/ui/configGeneral.qml
 msgid "700 ms"
-msgstr ""
+msgstr "700 ms"
 
 #: package/contents/ui/configGeneral.qml
 msgid "1 second"
-msgstr ""
+msgstr "1 seconde"
 
 #: package/contents/ui/configGeneral.qml
 msgid "1.5 seconds"
-msgstr ""
+msgstr "1,5 seconde"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Delay auto-close after copying a snippet"
-msgstr ""
+msgstr "Wachttijd alvorens te sluiten na kopiëren van een knipsel"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Sort by usage"
@@ -269,8 +268,7 @@ msgstr "Maximumaantal bereikt"
 msgid "Delete"
 msgstr "Verwĳderen"
 
-#: package/contents/ui/configSnippets.qml
-#: package/contents/ui/SnippetDialog.qml
+#: package/contents/ui/configSnippets.qml package/contents/ui/SnippetDialog.qml
 msgid "Add Snippet"
 msgstr "Knipsel toevoegen"
 
