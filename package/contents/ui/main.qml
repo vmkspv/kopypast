@@ -52,7 +52,7 @@ PlasmoidItem {
 
     Timer {
         id: closeTimer
-        interval: closeDelayValues[Math.max(0, Math.min(closeDelayValues.length - 1, plasmoid.configuration.closeDelayAfterCopy))]
+        interval: closeDelayValues[Math.max(0, Math.min(closeDelayValues.length - 1, plasmoid.configuration.closeAfterCopy))]
         onTriggered: root.expanded = false
     }
 
