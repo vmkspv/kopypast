@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kopypast\n"
 "Report-Msgid-Bugs-To: https://github.com/vmkspv/kopypast/issues\n"
 "POT-Creation-Date: 2026-04-15 12:00+0300\n"
-"PO-Revision-Date: 2025-11-26 18:38-0300\n"
+"PO-Revision-Date: 2026-09-20 23:34-0300\n"
 "Last-Translator: Cristiano Fraga G. Nunes <cfgnunes@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <LL@li.org>\n"
 "Language: pt_BR\n"
@@ -47,7 +47,7 @@ msgstr "Todos os snippets são duplicados"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Cannot restore snippets: maximum limit (%1) reached"
-msgstr "Não é possível restaurar snippets: limite máximo (%1) atingido"
+msgstr "Não é possível restaurar os snippets: limite máximo (%1) atingido"
 
 #: package/contents/ui/BackupDialog.qml
 msgid "Only restored %1 snippet due to maximum limit"
@@ -98,7 +98,7 @@ msgstr "Aparência"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Configure how the widget looks"
-msgstr "Configure a aparência do widget"
+msgstr "Configurar a aparência do widget"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Monochrome icon"
@@ -106,7 +106,7 @@ msgstr "Ícone monocromático"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Use a monochrome icon that matches the color scheme"
-msgstr "Usar um ícone monocromático compatível com o esquema de cores"
+msgstr "Usar um ícone monocromático que combine com o esquema de cores"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Enable search bar"
@@ -122,15 +122,15 @@ msgstr "Exibir barra inferior"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Place a toolbar with counter and buttons at the bottom"
-msgstr "Colocar uma barra com contador e botões na parte inferior"
+msgstr "Exibir na parte inferior uma barra com contador e botões"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Hide snippet previews"
-msgstr "Ocultar prévias dos snippets"
+msgstr "Ocultar pré-visualizações dos snippets"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Show only snippet titles without content previews"
-msgstr "Exibir apenas os títulos dos snippets sem prévias do conteúdo"
+msgstr "Exibir apenas os títulos dos snippets sem pré-visualização do conteúdo"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Mark new snippets"
@@ -158,7 +158,7 @@ msgstr "Digite o texto para novos snippets (opcional)"
 
 #: package/contents/ui/configGeneral.qml
 msgid "This text will be pre-filled when creating new snippets"
-msgstr "Esse texto será preenchido automaticamente ao criar novos snippets"
+msgstr "Este texto será pré-preenchido ao criar novos snippets"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Maximum number of snippets:"
@@ -170,27 +170,27 @@ msgstr "Limitar o número de snippets para melhor desempenho"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Close delay after copy:"
-msgstr ""
+msgstr "Atraso para fechar após copiar:"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Instant"
-msgstr ""
+msgstr "Imediato"
 
 #: package/contents/ui/configGeneral.qml
 msgid "700 ms"
-msgstr ""
+msgstr "700 ms"
 
 #: package/contents/ui/configGeneral.qml
 msgid "1 second"
-msgstr ""
+msgstr "1 segundo"
 
 #: package/contents/ui/configGeneral.qml
 msgid "1.5 seconds"
-msgstr ""
+msgstr "1,5 segundos"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Delay auto-close after copying a snippet"
-msgstr ""
+msgstr "Atrasar o fechamento automático após copiar um snippet"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Sort by usage"
@@ -206,7 +206,7 @@ msgstr "Navegação por teclado"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Use the keyboard keys to navigate and select snippets"
-msgstr "Usar as teclas do teclado para navegar e selecionar snippets"
+msgstr "Usar o teclado para navegar e selecionar snippets"
 
 #: package/contents/ui/configGeneral.qml
 msgid "Clear search on copy"
@@ -393,4 +393,4 @@ msgstr "segundo atual (00-59)"
 
 #: package/contents/ui/SnippetDialog.qml
 msgid "AM/PM marker"
-msgstr ""
+msgstr "marcador AM/PM"
